@@ -1,92 +1,81 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Добро пожаловать в ЗИМНЮЮ сказку <i>Тайна Шерстяного Носка</i></title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Тайна Шерстяного Носка</title>
 
-    <!-- Подключение сказочного шрифта -->
-    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+<!-- Шрифт -->
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: "Marck Script", cursive;
-            background: #f3f8ff;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: "Marck Script", cursive;
+    background: #f3f8ff;
+}
 
-        /* ================= БАННЕР ================= */
-        .winter-banner {
-            position: relative;
-            padding: 120px 20px 220px;
-            text-align: center;
-            color: white;
-            background: linear-gradient(
-                to bottom,
-                #0a1028 0%,
-                #0d1540 50%,
-                #66c7ff 100%
-            );
+/* ================= БАННЕР ================= */
+.winter-banner {
+    position: relative;
+    padding: 180px 20px 250px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(to bottom, #061433 0%, #0d1d45 50%, #73c4ff 100%);
+    overflow: hidden;
 
-            clip-path: polygon(
-                0 0,
-                100% 0,
-                100% 85%,
-                85% 92%,
-                70% 86%,
-                52% 94%,
-                34% 87%,
-                14% 96%,
-                0 89%
-            );
+    /* Мягкий сугроб снизу */
+    clip-path: polygon(
+        0% 0%, 
+        100% 0%, 
+        100% 85%, 
+        80% 92%, 
+        60% 88%, 
+        40% 93%, 
+        20% 88%, 
+        0% 94%
+    );
+}
 
-            overflow: hidden;
-        }
+/* Луна */
+.moon {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, #fff8d2 10%, #ffd973 45%, #c8a23b 70%, transparent 100%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 55px 25px rgba(255, 225, 150, 0.5),
+        0 0 120px 60px rgba(255, 235, 170, 0.25);
+    z-index: 2;
+    filter: blur(1px);
+}
 
-        /* Луна */
-        .moon {
-            position: absolute;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 140px;
-            height: 140px;
-            background: radial-gradient(
-                circle,
-                #fff8d8 0%,
-                #ffe089 45%,
-                #c4a23d 70%,
-                transparent 100%
-            );
-            border-radius: 50%;
-            filter: blur(2px);
-            box-shadow:
-                0 0 40px 15px rgba(255, 213, 90, 0.45),
-                0 20px 80px 30px rgba(255, 213, 90, 0.25);
-        }
+/* Заголовок поверх луны */
+.banner-title {
+    position: relative;
+    z-index: 5;
+    margin-top: 60px;
+    font-size: 54px;
+    color: #e6f5ff;
+    text-shadow: 
+        0 0 12px #7cd5ff,
+        0 0 22px #b5e9ff,
+        0 0 42px #b5e9ff;
+}
 
-        /* Заголовок */
-        .banner-title {
-            position: relative;
-            z-index: 2;
-            color: #d8efff;
-            text-shadow: 0 0 12px #7cd5ff;
-            font-size: 48px;
-            font-weight: 700;
-            margin-top: 170px;
-        }
-/* ================= ИЛЛЮСТРАЦИИ ПО БОКАМ ================= */
+/* ================= ИЛЛЮСТРАЦИИ ================= */
 .banner-illustration-left,
 .banner-illustration-right {
     position: absolute;
     bottom: 0;
-    width: 180px;   /* ← УМЕНЬШЕННЫЙ РАЗМЕР */
-    opacity: 0.82;
-    filter:
-        drop-shadow(0 0 18px rgba(230, 200, 120, 0.35))
-        brightness(1.15);
+    width: 180px;
+    opacity: 0.87;
+    filter: drop-shadow(0 0 22px rgba(230, 230, 255, 0.4)) brightness(1.1);
     z-index: 4;
-    animation: softShine 6s ease-in-out infinite alternate;
 }
 
 .banner-illustration-left {
@@ -97,198 +86,140 @@
     right: 3%;
 }
 
-        /* ================= ПАДАЮЩИЙ СНЕГ ================= */
-        .snow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1000;
-            overflow: hidden;
-        }
+/* ================= ПАДАЮЩИЙ СНЕГ ================= */
+.snow span {
+    position: fixed;
+    top: -10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear infinite, sway ease-in-out infinite;
+}
 
-        .snow span {
-            position: absolute;
-            top: -10px;
-            width: 6px;
-            height: 6px;
-            background: #dff3ff;
-            border-radius: 50%;
-            opacity: 0.9;
-            animation: fall linear infinite, sway ease-in-out infinite;
-        }
+@keyframes fall {
+    0% { transform: translateY(-10px); opacity: 1; }
+    100% { transform: translateY(110vh); opacity: 0.3; }
+}
 
-        /* Мягкое плавное падение */
-        @keyframes fall {
-            0% { transform: translateY(-10px); opacity: 1; }
-            100% { transform: translateY(110vh); opacity: 0.4; }
-        }
+@keyframes sway {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+    100% { transform: translateX(0); }
+}
 
-        /* Легкое покачивание снежинок */
-        @keyframes sway {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(20px); }
-            100% { transform: translateX(0); }
-        }
+/* ================= КНОПКИ ================= */
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    z-index: 6;
+}
 
-        /* ================= КНОПКИ ================= */
-        .buttons {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+.btn {
+    position: relative;
+    background: linear-gradient(to bottom, #4093ff, #0b3570);
+    color: white;
+    padding: 14px 26px;
+    border-radius: 16px;
+    font-size: 22px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 15px rgba(98,180,255,0.6);
+    transition: 0.3s;
+}
 
-        .btn {
-            background: #0e224d;
-            color: #dff3ff;
-            padding: 12px 22px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 18px;
-            box-shadow: 0 0 10px rgba(70, 150, 255, 0.4);
-            transition: 0.25s;
-        }
+.btn:hover {
+    box-shadow: 0 0 25px rgba(140,210,255,0.8);
+    transform: translateY(-3px);
+}
 
-        .btn:hover {
-            background: #17356d;
-            box-shadow: 0 0 18px rgba(120, 190, 255, 0.6);
-        }
+/* Снежная шапочка над кнопкой */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background: url('data:image/svg+xml;utf8,<svg width="200" height="40" xmlns="http://www.w3.org/2000/svg"><path d="M0 25 Q20 5 40 20 T80 15 T120 20 T160 10 T200 25 L200 40 L0 40 Z" fill="white"/></svg>') no-repeat center/100% 100%;
+    opacity: 0.95;
+}
 
-        /* ================= СЕКЦИИ ================= */
-        section {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        h2 {
-            text-align: center;
-            color: #0d1540;
-            font-size: 36px;
-            margin-bottom: 30px;
-        }
-
-        p {
-            color: #1a2a4a;
-            font-size: 20px;
-            line-height: 1.7;
-            text-align: center;
-        }
-
-        .section-img {
-            display: block;
-            max-width: 300px;
-            margin: 20px auto;
-            border-radius: 14px;
-            box-shadow: 0 0 20px rgba(90, 150, 255, 0.3);
-        }
-
-        /* ================= ОТЗЫВЫ ================= */
-        .reviews {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .review {
-            background: white;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 0 18px rgba(0,0,0,0.1);
-        }
-
-        .review img {
-            width: 100px;
-            height: 100px;
-            border-radius: 100px;
-            display: block;
-            margin: 10px auto;
-        }
-
-        .review p {
-            margin-top: 10px;
-            font-size: 18px;
-        }
-    </style>
+/* Иконки */
+.icon {
+    width: 26px;
+    height: 26px;
+    filter: drop-shadow(0 0 5px rgba(170,220,255,0.9));
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Падающий снег -->
-    <div class="snow"></div>
+<!-- Падающий снег -->
+<div class="snow" id="snow"></div>
 
-    <script>
-        /* Генерация снежинок */
-        const snowContainer = document.querySelector(".snow");
-        for (let i = 0; i < 80; i++) {
-            let snow = document.createElement("span");
-            let size = Math.random() * 4 + 2;
-            snow.style.width = size + "px";
-            snow.style.height = size + "px";
-            snow.style.left = Math.random() * 100 + "%";
-            snow.style.animationDuration = 2 + Math.random() * 4 + "s";
-            snow.style.animationDelay = Math.random() * 5 + "s";
-            snowContainer.appendChild(snow);
-        }
-    </script>
+<script>
+for (let i = 0; i < 120; i++) {
+    let snow = document.createElement("span");
+    let size = Math.random() * 5 + 3;
+    snow.style.width = size + "px";
+    snow.style.height = size + "px";
+    snow.style.left = Math.random() * 100 + "%";
+    snow.style.animationDuration = 6 + Math.random() * 10 + "s";
+    snow.style.animationDelay = Math.random() * 5 + "s";
+    document.getElementById("snow").appendChild(snow);
+}
+</script>
 
-    <!-- БАННЕР -->
-    <header class="winter-banner">
-        <div class="moon"></div>
+<!-- БАННЕР -->
+<header class="winter-banner">
+    <div class="moon"></div>
 
-        <!-- ЛЕВАЯ ИЛЛЮСТРАЦИЯ -->
-        <img src="veljesik1.jpg" class="banner-illustration-left" alt="иллюстрация">
+    <img src="veljesik1.jpg" class="banner-illustration-left" alt="">
+    <img src="petrunja1.jpeg" class="banner-illustration-right" alt="">
 
-        <!-- ПРАВАЯ ИЛЛЮСТРАЦИЯ -->
-        <img src="petrunja1.jpg" class="banner-illustration-right" alt="иллюстрация">
+    <h1 class="banner-title">Зимние приключения в тайге</h1>
 
-        <h1 class="banner-title">Зимние приключения в тайге</h1>
+    <div class="buttons">
 
-        <!-- КНОПКИ -->
-        <div class="buttons">
-            <a href="#" class="btn">Telegram</a>
-            <a href="#" class="btn">Facebook</a>
-            <a href="#" class="btn">Instagram</a>
-            <a href="#" class="btn">Купить eBook</a>
-            <a href="#" class="btn">Купить книгу</a>
-        </div>
-    </header>
+        <a href="#" class="btn">
+            <img class="icon" src="https://simpleicons.org/icons/telegram.svg">
+            Telegram
+        </a>
 
-    <!-- О КНИГЕ -->
-    <section>
-        <h2>О книге</h2>
-        <img src="Cover_Winter_Color.jpeg" class="section-img" alt="Обложка книги" />
+        <a href="#" class="btn">
+            <img class="icon" src="https://simpleicons.org/icons/facebook.svg">
+            Facebook
+        </a>
 
-        <p>«Заветная Мечта» — российская национальная премия в области детской литературы. Учреждена в 2005 году Детским благотворительным фондом «Заветная мечта».</p>
-    </section>
+        <a href="#" class="btn">
+            <img class="icon" src="https://simpleicons.org/icons/instagram.svg">
+            Instagram
+        </a>
 
-    <!-- О ПРЕМИИ -->
-    <section>
-        <h2>О премии «Заветная Мечта»</h2>
-        <img src="award.jpeg" class="section-img" alt="Премия Заветная Мечта" />
-        <p></p>
-    </section>
+        <a href="#" class="btn">
+            <img class="icon" src="https://simpleicons.org/icons/youtube.svg">
+            YouTube
+        </a>
 
-    <!-- ОТЗЫВЫ -->
-    <section>
-        <h2>Отзывы</h2>
+        <a href="#" class="btn">
+            <img class="icon" src="https://simpleicons.org/icons/bookstack.svg">
+            Купить eBook
+        </a>
 
-        <div class="reviews">
-            <div class="review">
-                <img src="review1.jpeg" alt="читатель">
-                <p>«Книга заставила меня плакать и улыбаться одновременно. Сильное, доброе произведение!»</p>
-            </div>
+        <a href="#" class="btn">
+            <img class="icon" src="https://simpleicons.org/icons/book.svg">
+            Купить книгу
+        </a>
 
-            <div class="review">
-                <img src="review2.jpeg" alt="читатель">
-                <p>«Я прочитала на одном дыхании. Это история, которая остаётся с тобой надолго.»</p>
-            </div>
-        </div>
-    </section>
+    </div>
+</header>
 
 </body>
 </html>
