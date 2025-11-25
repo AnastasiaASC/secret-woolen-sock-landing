@@ -93,12 +93,20 @@
             background: #dff3ff;
             border-radius: 50%;
             opacity: 0.9;
-            animation: fall linear infinite;
+            animation: fall linear infinite, sway ease-in-out infinite;
         }
 
+         /* Мягкое плавное падение */
         @keyframes fall {
-            0% {transform: translateY(-10px); opacity: 1;}
-            100% {transform: translateY(110vh); opacity: 0;}
+            0% { transform: translateY(-10px); opacity: 1; }
+            100% { transform: translateY(110vh); opacity: 0.4; }
+        }
+
+        /* Легкое покачивание снежинок */
+        @keyframes sway {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(0); }
         }
 
         /* ================= КНОПКИ ================= */
@@ -202,11 +210,17 @@
         </script>
     </div>
 
-    <!-- БАННЕР -->
+     <!-- БАННЕР -->
     <header class="winter-banner">
         <div class="moon"></div>
-        <h1 class="banner-title">Как аукнется, так и откликнется! </h1>
 
+        <!-- ЛЕВАЯ ИЛЛЮСТРАЦИЯ -->
+        <img src="veljesik1.jpeg" class="banner-illustration-left" alt="иллюстрация">
+
+        <!-- ПРАВАЯ ИЛЛЮСТРАЦИЯ -->
+        <img src="petrunja1.jpeg" class="banner-illustration-right" alt="иллюстрация">
+
+        <h1 class="banner-title">Снежная книга — Заветная Мечта</h1>
         <!-- КНОПКИ -->
         <div class="buttons">
             <a href="#" class="btn">Telegram</a>
