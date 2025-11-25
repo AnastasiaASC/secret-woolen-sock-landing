@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Тайна шерстяного носка. Зима</title>
+<style>
+ body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Georgia', serif;
+   background: linear-gradient(#0a1224, #11335a);
+   color: #fff;
+   overflow-x: hidden;
+ }
+ /* Фон леса */
+ .background {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: url('/mnt/data/petrunja.jpeg') center/cover no-repeat;
+   filter: brightness(0.55) saturate(1.2) blur(2px);
+   z-index: -2;
+ }
+ /* Снег */
+ .snowflake {
+   position: fixed;
+   top: -10px;
+   color: #fff;
+   font-size: 12px;
+   opacity: 0.7;
+   pointer-events: none;
+   animation: fall linear infinite;
+ }
+ @keyframes fall {
+   0% { transform: translateY(-10vh) translateX(0); opacity: 0.9; }
+   100% { transform: translateY(110vh) translateX(20px); opacity: 0.1; }
+ }
+ .hero {
+   text-align: center;
+   padding: 120px 20px 60px;
+ }
+ .hero h1 {
+   font-size: 48px;
+   text-shadow: 0 0 25px #4da8ff;
+ }
+ .hero p {
+   font-size: 20px;
+   opacity: 0.9;
+ }
+ .section {
+   max-width: 900px;
+   margin: 40px auto;
+   padding: 30px;
+   background: rgba(180,210,255,0.12);
+   border-radius: 14px;
+   box-shadow: 0 0 20px #000a;
+   backdrop-filter: blur(6px);
+   line-height: 1.7;
+ }
+ h2 {
+   font-size: 32px;
+   text-shadow: 0 0 15px #112;
+ }
+ .buttons a {
+   display: inline-block;
+   margin: 14px;
+   padding: 16px 26px;
+   background: rgba(255,255,255,0.2);
+   border: 2px solid rgba(200,220,255,0.45);
+   border-radius: 10px;
+   color: #fff;
+   font-size: 20px;
+   text-decoration: none;
+   transition: 0.3s;
+ }
+ .buttons a:hover {
+   background: rgba(255,255,255,0.35);
+ }
+ .illustration {
+   display: block;
+   margin: 20px auto;
+   max-width: 400px;
+   border-radius: 12px;
+   box-shadow: 0 0 20px #000a;
+ }
+ footer {
+   text-align: center;
+   padding: 40px;
+   font-size: 14px;
+   opacity: 0.6;
+ }
+</style>
+</head>
+<body>
+<div class="background"></div>
+
+<!-- Снег -->
+<script>
+ for (let i = 0; i < 70; i++) {
+   const snow = document.createElement('div');
+   snow.className = 'snowflake';
+   snow.textContent = '✦';
+   snow.style.left = Math.random() * 100 + 'vw';
+   snow.style.animationDuration = 4 + Math.random() * 6 + 's';
+   snow.style.fontSize = 10 + Math.random() * 10 + 'px';
+   document.body.appendChild(snow);
+ }
+</script>
+
+<div class="hero">
+  <h1>Тайна шерстяного носка. Зима</h1>
+  <p>Современная добрая сказка о зимнем путешествии, дружбе и чудeсах.</p>
+</div>
+
+<img src="/mnt/data/петруня 1.jpeg" class="illustration" alt="Иллюстрация" />
+
+<div class="section">
+  <h2>Аннотация</h2>
+  <p>Хотите поностальгировать и помечтать вместе с вашими детьми?</p>
+  <p>Тогда читайте сказку «Тайна шерстяного носка. Зима»! Новогодние приключения десятилетних ребят — это возможность вернуться в своё собственное детство, когда волшебство было реальностью, а мечты — осязаемыми. Эта история о дружбе, взаимоподдержке и о том, как важно учиться смелости, быть верным себе и своим близким. Она помогает не только детям учиться важным жизненным урокам, но и взрослым вспомнить о самых главных ценностях. Подарите себе и своим детям моменты настоящего волшебства и тепла в добром сказочном мире!</p>
+</div>
+
+<div class="section">
+  <h2>О чём зимняя сказка?</h2>
+  <p>Четверо друзей — Дениска, Иванка, Даша и Окул — отправляются в увлекательное, полное опасностей новогоднее путешествие. Их путь лежит через заснеженные леса, поля и замёрзшие реки. Опасности поджидают их на каждом шагу, но ребята не одни: им помогают волшебные существа — домовые, лесные духи, а иногда и местные жители деревень и хуторов.</p>
+  <p>Ребята встречаются с лешими-шатунами, с криксами, банником и даже с самой Мореной — ледяной и беспощадной. А где-то рядом бродит стая голодных волков... Чтобы пройти этот путь, детям нужно единство, смелость и вера в чудо.</p>
+</div>
+
+<div class="section">
+  <h2>Номинация</h2>
+  <p>Добрая повесть о новогоднем путешествии четырёх детей в заснеженном лесу, полном сказочных существ. Современная сказка «Тайна шерстяного носка» повествует о дружбе, выносливости и вере в лучшее. Номинирована на Большую премию Национальной детской литературной премии «Заветная мечта».</p>
+</div>
+
+<div class="section buttons">
+  <a href="#">Читать пробные главы</a>
+  <a href="#">Telegram-канал</a>
+  <a href="#">YouTube</a>
+</div>
+
+<footer>
+  © Тайна шерстяного носка. Зима. Все права защищены.
+</footer>
+
+</body>
+</html>
