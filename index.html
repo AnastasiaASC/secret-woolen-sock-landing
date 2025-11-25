@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приветствую тебя в ЗИМНЕЙ сказке <i>Тайна Шерстяного Носка!</i></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добро пожаловать в ЗИМНЮЮ сказку <i>Тайна Шерстяного Носка</i></title>
 
     <style>
         body {
@@ -12,10 +12,10 @@
             background: #f3f8ff;
         }
 
-        /* БАННЕР */
+        /* ================= БАННЕР ================= */
         .winter-banner {
             position: relative;
-            padding: 120px 20px 180px;
+            padding: 120px 20px 220px;
             text-align: center;
             color: white;
             background: linear-gradient(
@@ -25,23 +25,22 @@
                 #66c7ff 100%
             );
 
-            /* Неровный край как сугроб */
             clip-path: polygon(
                 0 0,
                 100% 0,
-                100% 80%,
-                88% 89%,
-                70% 82%,
-                52% 90%,
-                34% 84%,
-                14% 93%,
-                0 86%
+                100% 85%,
+                85% 92%,
+                70% 86%,
+                52% 94%,
+                34% 87%,
+                14% 96%,
+                0 89%
             );
 
             overflow: hidden;
         }
 
-        /* Луна с золотым светом */
+        /* Луна */
         .moon {
             position: absolute;
             top: 40px;
@@ -63,7 +62,7 @@
                 0 20px 80px 30px rgba(255, 213, 90, 0.25);
         }
 
-        /* Заголовок баннера */
+        /* Заголовок */
         .banner-title {
             position: relative;
             z-index: 2;
@@ -74,53 +73,182 @@
             margin-top: 170px;
         }
 
-        /* Снежинки */
-        .snowflakes::before,
-        .snowflakes::after {
-            content: "✦ ✧ ✦ ✧ ✦ ✧ ✦";
+        /* ================= ПАДАЮЩИЙ СНЕГ ================= */
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .snow span {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 28px;
-            color: #c8eaff;
-            opacity: 0.7;
+            top: -10px;
+            width: 6px;
+            height: 6px;
+            background: #dff3ff;
+            border-radius: 50%;
+            opacity: 0.9;
+            animation: fall linear infinite;
         }
 
-        .snowflakes::before {
-            top: 80px;
-        }
-        .snowflakes::after {
-            top: 120px;
-            font-size: 22px;
-            opacity: 0.5;
+        @keyframes fall {
+            0% {transform: translateY(-10px); opacity: 1;}
+            100% {transform: translateY(110vh); opacity: 0;}
         }
 
-        /* Основной текст */
-        .content {
-            padding: 40px 20px;
-            max-width: 700px;
+        /* ================= КНОПКИ ================= */
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            background: #0e224d;
+            color: #dff3ff;
+            padding: 12px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 0 10px rgba(70, 150, 255, 0.4);
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            background: #17356d;
+            box-shadow: 0 0 18px rgba(120, 190, 255, 0.6);
+        }
+
+        /* ================= СЕКЦИИ ================= */
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
             margin: auto;
+        }
+
+        h2 {
             text-align: center;
+            color: #0d1540;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        p {
             color: #1a2a4a;
             font-size: 20px;
-            line-height: 1.6;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .section-img {
+            display: block;
+            max-width: 300px;
+            margin: 20px auto;
+            border-radius: 14px;
+            box-shadow: 0 0 20px rgba(90, 150, 255, 0.3);
+        }
+
+        /* ================= ОТЗЫВЫ ================= */
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .review {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 0 18px rgba(0,0,0,0.1);
+        }
+
+        .review img {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .review p {
+            margin-top: 10px;
+            font-size: 18px;
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Падающий снег -->
+    <div class="snow">
+        <script>
+            for (let i = 0; i < 80; i++) {
+                let snow = document.createElement("span");
+                let size = Math.random() * 4 + 2;
+                snow.style.width = size + "px";
+                snow.style.height = size + "px";
+                snow.style.left = Math.random() * 100 + "%";
+                snow.style.animationDuration = 2 + Math.random() * 4 + "s";
+                snow.style.animationDelay = Math.random() * 5 + "s";
+                document.querySelector(".snow").appendChild(snow);
+            }
+        </script>
+    </div>
+
     <!-- БАННЕР -->
     <header class="winter-banner">
         <div class="moon"></div>
-        <h1 class="banner-title">Снежный Сказочный Лендинг</h1>
-        <div class="snowflakes"></div>
+        <h1 class="banner-title">Как аукнется, так и откликнется! </h1>
+
+        <!-- КНОПКИ -->
+        <div class="buttons">
+            <a href="#" class="btn">Telegram</a>
+            <a href="#" class="btn">Facebook</a>
+            <a href="#" class="btn">Instagram</a>
+            <a href="#" class="btn">Купить eBook</a>
+            <a href="#" class="btn">Купить книгу</a>
+        </div>
     </header>
 
-    <!-- ОСНОВНОЙ ТЕКСТ -->
-    <section class="content">
-        <p>Это пример твоего зимнего лендинга. Все цвета, эффекты, свет и сугробы теперь корректно отображаются. 
-           Можешь добавлять сюда свои блоки, иллюстрации, кнопки и описание проекта.</p>
+    <!-- О КНИГЕ -->
+    <section>
+        <h2>О книге</h2>
+        <img src="Cover_Winter_Color.jpeg" class="section-img" alt="Обложка книги" />
+
+        <p>«Заветная Мечта» -  российская национальная премия в области детской литературы. Учреждена в 2005 году Детским благотворительным фондом «Заветная мечта»[1]  </p>
+    </section>
+
+    <!-- О ПРЕМИИ -->
+    <section>
+        <h2>О премии «Заветная Мечта»</h2>
+        <img src="award.jpeg" class="section-img" alt="Премия Заветная Мечта" />
+
+        <p>
+        </p>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section>
+        <h2>Отзывы</h2>
+
+        <div class="reviews">
+            <div class="review">
+                <img src="review1.jpeg" alt="читатель">
+                <p>«Книга заставила меня плакать и улыбаться одновременно. Сильное, доброе произведение!»</p>
+            </div>
+
+            <div class="review">
+                <img src="review2.jpeg" alt="читатель">
+                <p>«Я прочитала на одном дыхании. Это история, которая остаётся с тобой надолго.»</p>
+            </div>
+        </div>
     </section>
 
 </body>
