@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приветствую тебя в ЗИМНЕЙ сказке <i>Тайна Шерстяного Носка!</i></title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Arial", sans-serif;
+            background: #f3f8ff;
+        }
+
+        /* БАННЕР */
+        .winter-banner {
+            position: relative;
+            padding: 120px 20px 180px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(
+                to bottom,
+                #0a1028 0%,
+                #0d1540 50%,
+                #66c7ff 100%
+            );
+
+            /* Неровный край как сугроб */
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 80%,
+                88% 89%,
+                70% 82%,
+                52% 90%,
+                34% 84%,
+                14% 93%,
+                0 86%
+            );
+
+            overflow: hidden;
+        }
+
+        /* Луна с золотым светом */
+        .moon {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(
+                circle,
+                #fff8d8 0%,
+                #ffe089 45%,
+                #c4a23d 70%,
+                transparent 100%
+            );
+            border-radius: 50%;
+            filter: blur(2px);
+            box-shadow:
+                0 0 40px 15px rgba(255, 213, 90, 0.45),
+                0 20px 80px 30px rgba(255, 213, 90, 0.25);
+        }
+
+        /* Заголовок баннера */
+        .banner-title {
+            position: relative;
+            z-index: 2;
+            color: #d8efff;
+            text-shadow: 0 0 12px #7cd5ff;
+            font-size: 48px;
+            font-weight: 700;
+            margin-top: 170px;
+        }
+
+        /* Снежинки */
+        .snowflakes::before,
+        .snowflakes::after {
+            content: "✦ ✧ ✦ ✧ ✦ ✧ ✦";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 28px;
+            color: #c8eaff;
+            opacity: 0.7;
+        }
+
+        .snowflakes::before {
+            top: 80px;
+        }
+        .snowflakes::after {
+            top: 120px;
+            font-size: 22px;
+            opacity: 0.5;
+        }
+
+        /* Основной текст */
+        .content {
+            padding: 40px 20px;
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            color: #1a2a4a;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- БАННЕР -->
+    <header class="winter-banner">
+        <div class="moon"></div>
+        <h1 class="banner-title">Снежный Сказочный Лендинг</h1>
+        <div class="snowflakes"></div>
+    </header>
+
+    <!-- ОСНОВНОЙ ТЕКСТ -->
+    <section class="content">
+        <p>Это пример твоего зимнего лендинга. Все цвета, эффекты, свет и сугробы теперь корректно отображаются. 
+           Можешь добавлять сюда свои блоки, иллюстрации, кнопки и описание проекта.</p>
+    </section>
+
+</body>
+</html>
