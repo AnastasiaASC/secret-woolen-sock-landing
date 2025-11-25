@@ -216,7 +216,8 @@ section {
 <body>
 
 <!-- Падающий снег -->
-<div class="snow" id="snow"></div>
+<div class="slow-snow" id="slowSnow"></div>
+
 
 <script>
 for (let i = 0; i < 120; i++) {
@@ -327,6 +328,32 @@ for (let i = 0; i < 120; i++) {
 
     </div>
 </section>
+<script>
+function createSlowSnow() {
+    const container = document.getElementById("slowSnow");
+    const totalSnow = 120; // Anzahl der Schneeflocken
+
+    for (let i = 0; i < totalSnow; i++) {
+        const flake = document.createElement("div");
+        flake.classList.add("snowflake");
+
+        const size = 2 + Math.random() * 6;
+        const left = Math.random() * 100;
+        const duration = 12 + Math.random() * 10;   // Langsam!
+        const delay = Math.random() * 10;
+
+        flake.style.width = size + "px";
+        flake.style.height = size + "px";
+        flake.style.left = left + "%";
+        flake.style.animationDuration = duration + "s";
+        flake.style.animationDelay = delay + "s";
+
+        container.appendChild(flake);
+    }
+}
+
+createSlowSnow();
+</script>
 
 </body>
 </html>
