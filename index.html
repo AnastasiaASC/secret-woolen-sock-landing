@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Тайна Шерстяного Носка</title>
 
-<!-- Шрифт -->
+<!-- ================= ШРИФТ ================= -->
 <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 
+
+<!-- ================= СТИЛИ ================= -->
 <style>
 body {
     margin: 0;
@@ -18,19 +20,18 @@ body {
 /* ================= БАННЕР ================= */
 .winter-banner {
     position: relative;
-    padding: 160px 20px 180px; /* kompakter */
+    padding: 160px 20px 180px;
     text-align: center;
-    color: white;
     overflow: hidden;
-
     background: url("fon.png") center/cover no-repeat;
+    color: white;
 }
 
-/* Луна */
+/* ЛУНА */
 .moon {
     position: absolute;
     top: 40px;
-    left: 30%; /* leicht nach links */
+    left: 30%;
     transform: translateX(-50%);
     width: 170px;
     height: 170px;
@@ -42,7 +43,7 @@ body {
     z-index: 2;
 }
 
-/* Заголовок поверх луны */
+/* ТИТУЛ */
 .banner-title {
     position: absolute;
     top: 55px;
@@ -65,10 +66,7 @@ body {
     transform: translateX(-50%);
     width: 180%;
     height: 80px;
-    background: radial-gradient(circle,
-        rgba(255,255,255,0.8),
-        rgba(255,255,255,0)
-    );
+    background: radial-gradient(circle, rgba(255,255,255,0.8), rgba(255,255,255,0));
     filter: blur(22px);
     z-index: -1;
 }
@@ -78,12 +76,11 @@ body {
 .banner-illustration-right {
     position: absolute;
     bottom: 0;
-    width: 100px; /* kleiner */
+    width: 100px;
     opacity: 0.9;
-    filter: drop-shadow(0 0 22px rgba(230, 230, 255, 0.4)) brightness(1.1);
+    filter: drop-shadow(0 0 22px rgba(230,230,255,0.4)) brightness(1.1);
     z-index: 4;
 }
-
 .banner-illustration-left { left: 2%; }
 .banner-illustration-right { right: 2%; }
 
@@ -99,7 +96,7 @@ body {
 
 .btn {
     position: relative;
-   background: #0a1f4a;                /* dunkelblau */
+    background: #0a1f4a;
     border: 2px solid rgba(255,255,255,0.6);
     color: white;
     padding: 10px 20px;
@@ -110,16 +107,14 @@ body {
     align-items: center;
     gap: 10px;
     backdrop-filter: blur(4px);
-    box-shadow: 0 0 12px rgba(10, 40, 90, 0.6);
+    box-shadow: 0 0 12px rgba(10,40,90,0.6);
     transition: 0.3s;
 }
-
 .btn:hover {
     background: rgba(5, 35, 80, 0.9);
     transform: translateY(-2px);
 }
 
-/* Иконки */
 .icon {
     width: 24px;
     height: 24px;
@@ -129,14 +124,9 @@ body {
 /* ================= СЕКЦИИ ================= */
 section {
     max-width: 900px;
-    margin: -20px auto 0; /* nach oben gezogen */
+    margin: -20px auto 0;
     text-align: center;
     padding: 40px 20px;
-}
-
-h2 {
-    font-size: 36px;
-    color: #0d1540;
 }
 
 .section-img {
@@ -146,7 +136,6 @@ h2 {
     border-radius: 12px;
 }
 
-/* Автор */
 .author-photo {
     width: 160px;
     border-radius: 12px;
@@ -154,7 +143,13 @@ h2 {
     display: block;
 }
 
-/* ================= СНЕГ ================= */
+/* GOLDENE SECTION HEADERS */
+h2 {
+    font-size: 36px;
+    color: #0d1540;
+}
+
+/* ================= СНЕГ (sichtbar) ================= */
 .slow-snow {
     position: fixed;
     top: 0;
@@ -163,53 +158,52 @@ h2 {
     height: 100%;
     pointer-events: none;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 99999;
 }
 
 .snowflake {
     position: absolute;
     top: -10px;
-    width: 10px;
-    height: 10px;
-    background: white;
+    width: 14px;
+    height: 14px;
+    background: rgba(255,255,255,0.95);
     border-radius: 50%;
     opacity: 0.9;
-    filter: blur(1px);
-    animation: slowFall linear infinite,
-               slowDrift ease-in-out infinite;
+    filter: blur(0.8px);
+    animation: slowFall linear infinite, slowDrift ease-in-out infinite;
 }
 
 @keyframes slowFall {
     0% { transform: translateY(-10px); opacity: 1; }
-    100% { transform: translateY(110vh); opacity: 0.3; }
+    100% { transform: translateY(110vh); opacity: 0.4; }
 }
-
 @keyframes slowDrift {
     0% { transform: translateX(0); }
-    50% { transform: translateX(35px); }
+    50% { transform: translateX(40px); }
     100% { transform: translateX(0); }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- Снег -->
+<!-- ================= СНЕГ ================= -->
 <div class="slow-snow" id="slowSnow"></div>
 
 <script>
 function createSlowSnow() {
     const container = document.getElementById("slowSnow");
-    const totalSnow = 130;
+    const totalSnow = 160;
 
     for (let i = 0; i < totalSnow; i++) {
         const flake = document.createElement("div");
         flake.classList.add("snowflake");
 
-        const size = 3 + Math.random() * 5;
+        const size = 4 + Math.random() * 10;
         const left = Math.random() * 100;
-        const duration = 14 + Math.random() * 12;
-        const delay = Math.random() * 12;
+        const duration = 20 + Math.random() * 15;
+        const delay = Math.random() * 20;
 
         flake.style.width = size + "px";
         flake.style.height = size + "px";
@@ -220,12 +214,10 @@ function createSlowSnow() {
         container.appendChild(flake);
     }
 }
-
 createSlowSnow();
 </script>
 
-
-<!-- БАННЕР -->
+<!-- ================= БАННЕР ================= -->
 <header class="winter-banner">
 
     <div class="moon"></div>
@@ -235,68 +227,39 @@ createSlowSnow();
 
     <h1 class="banner-title">Тайна Шерстяного Носка.Зима</h1>
 
-    <!-- Кнопки -->
+    <!-- КНОПКИ -->
     <div class="buttons">
 
-        <a href="#" class="btn">
-            <img class="icon" src="https://simpleicons.org/icons/telegram.svg">
-            Telegram
-        </a>
-
-        <a href="#" class="btn">
-            <img class="icon" src="https://simpleicons.org/icons/facebook.svg">
-            Facebook
-        </a>
-
-        <a href="#" class="btn">
-            <img class="icon" src="https://simpleicons.org/icons/instagram.svg">
-            Instagram
-        </a>
-
-        <a href="#" class="btn">
-            <img class="icon" src="https://simpleicons.org/icons/youtube.svg">
-            YouTube
-        </a>
-
-        <a href="#" class="btn">
-            <img class="icon" src="https://simpleicons.org/icons/bookstack.svg">
-            Купить eBook
-        </a>
-
-        <a href="#" class="btn">
-            <img class="icon" src="https://simpleicons.org/icons/book.svg">
-            Купить книгу
-        </a>
+        <a href="#" class="btn"><img class="icon" src="https://simpleicons.org/icons/telegram.svg">Telegram</a>
+        <a href="#" class="btn"><img class="icon" src="https://simpleicons.org/icons/facebook.svg">Facebook</a>
+        <a href="#" class="btn"><img class="icon" src="https://simpleicons.org/icons/instagram.svg">Instagram</a>
+        <a href="#" class="btn"><img class="icon" src="https://simpleicons.org/icons/youtube.svg">YouTube</a>
+        <a href="#" class="btn"><img class="icon" src="https://simpleicons.org/icons/bookstack.svg">Купить eBook</a>
+        <a href="#" class="btn"><img class="icon" src="https://simpleicons.org/icons/book.svg">Купить книгу</a>
 
     </div>
 </header>
 
 
-<!-- О КНИГЕ -->
+<!-- ================= О КНИГЕ ================= -->
 <section>
     <h2>О книге</h2>
-    <img src="Cover_Winter_Color.jpg" class="section-img" alt="Обложка книги" />
-    <p>Хотите понастольгировать и помечтать вместе с вашими детьми? 
-- Читайте про новогодние приключения Дениски и его друзей! Эта история не просто для детей — она для всех, кто готов вновь ощутить себя ребёнком, верящим в чудеса. Чтение о зимних приключениях десятилетних ребят  — это возможность вернуться в своё собственное детство, когда магия была реальностью, а мечты — осязаемыми. Эта история о дружбе, поддержке и о том, как важно оставаться верным себе и своим близким, помогает не только детям учиться важным жизненным урокам, но и взрослым вспомнить о самых главных ценностях. Воссоединитесь со своими детьми через сказку, подарите себе и им моменты настоящего волшебства и тепла в мире, где каждый из нас может снова поверить в чудеса и в себя.</p>
+    <img src="Cover_Winter_Color.jpg" class="section-img">
+    <p>Хотите понастольгировать и помечтать вместе с вашими детьми?...</p>
 </section>
 
-<!-- О ПРЕМИИ -->
+<!-- ================= О ПРЕМИИ ================= -->
 <section>
     <h2>О премии «Заветная Мечта»</h2>
-    <img src="award.jpeg" class="section-img" alt="Премия Заветная Мечта" />
-    <p>«Заветная мечта» — российская национальная премия в области детской литературы. Учреждена в 2005 году Детским благотворительным фондом «Заветная мечта» . Вручалась с 2006 по 2009 год.</p>
+    <img src="award.jpeg" class="section-img">
+    <p>«Заветная мечта» — российская национальная премия...</p>
 </section>
 
-<!-- ОБ АВТОРЕ -->
+<!-- ================= ОБ АВТОРЕ ================= -->
 <section>
     <h2>Об авторе</h2>
-    <img src="authorfoto1.jpg" class="author-photo" alt="Автор книги" />
-    <p>Василиса Сабашникова родом из Нижнего Новгорода, Россия. Способность
-пересказывать истории, написанные жизнью, она, вероятно, унаследовала от своей
-прабабушки Ольги Сергеевны, которую в ее тесном окружении называли «Чехов в юбке».
-Василиса Сабашникова живет в Германии и пишет для взрослых и детей.
-В 2006 году Василиса стала финалистом Национальной детской литературной премии.
-В 2007 году – одним из победителей Европейского фестиваля на лучший русский язык в Санкт-Петербурге.</p>
+    <img src="authorfoto1.jpg" class="author-photo">
+    <p>Василиса Сабашникова родом из Нижнего Новгорода...</p>
 </section>
 
 </body>
