@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
@@ -46,8 +46,8 @@ body {
 /* ТИТУЛ */
 .banner-title {
     position: absolute;
-    top: 160px;       /* опустили ниже */
-    left: 52%;        /* чуть вправо от луны */
+    top: 160px;
+    left: 52%;
     transform: translateX(-50%);
     z-index: 10;
     font-size: 64px;
@@ -81,6 +81,7 @@ body {
     filter: drop-shadow(0 0 22px rgba(230,230,255,0.4)) brightness(1.1);
     z-index: 4;
 }
+
 .banner-illustration-left { left: 2%; }
 .banner-illustration-right { right: 2%; }
 
@@ -128,8 +129,8 @@ section {
     text-align: center;
     padding: 40px 20px;
 }
-    section p {
-    color: #0a1f4a; /* dunkles edles Blau */
+section p {
+    color: #0a1f4a;
 }
 
 .section-img {
@@ -151,13 +152,8 @@ h2 {
     font-size: 36px;
     color: #0d1540;
 }
-/* Textfarbe in Info-Blöcken */
-section p {
-    color: #0a1f4a;       /* Dunkelblau */
-    line-height: 1.7;
-}
 
-/* ================= СНЕГ (sichtbar) ================= */
+/* ================= СНЕГ ================= */
 .slow-snow {
     position: fixed;
     top: 0;
@@ -183,16 +179,13 @@ section p {
 @keyframes slowFall {
     0% { transform: translateY(-100px); opacity: 1; }
     100% { transform: translateY(120vh); opacity: 0.4; }
-.slow-snow { mix-blend-mode: normal; }
-.snowflake { background: rgba(255,255,255,0.8); }
-
 }
+
 @keyframes slowDrift {
     0% { transform: translateX(0); }
     50% { transform: translateX(40px); }
     100% { transform: translateX(0); }
 }
-
 </style>
 </head>
 
@@ -232,8 +225,8 @@ createSlowSnow();
 
     <div class="moon"></div>
 
-    <img src="veljesik2.png" class="banner-illustration-left" alt="">
-    <img src="petrunja2.png" class="banner-illustration-right" alt="">
+    <img src="veljesik2.png.webp" class="banner-illustration-left" alt="">
+    <img src="petrunja2.png.webp" class="banner-illustration-right" alt="">
 
     <h1 class="banner-title">Тайна Шерстяного Носка.Зима</h1>
 
@@ -254,22 +247,28 @@ createSlowSnow();
 <!-- ================= О КНИГЕ ================= -->
 <section>
     <h2>О книге</h2>
-    <img src="Cover_Winter_Color.jpg" class="section-img">
-    <p>Хотите понастольгировать и помечтать вместе с вашими детьми?...</p>
+    <img src="Cover_Winter_Color.jpg.webp". class="section-img">
+    <p>Хотите понастольгировать и помечтать вместе с вашими детьми? 
+- Читайте про новогодние приключения Дениски и его друзей! Эта история не просто для детей — она для всех, кто готов вновь ощутить себя ребёнком, верящим в чудеса. Чтение о зимних приключениях десятилетних ребят  — это возможность вернуться в своё собственное детство, когда магия была реальностью, а мечты — осязаемыми. Эта история о дружбе, поддержке и о том, как важно оставаться верным себе и своим близким, помогает не только детям учиться важным жизненным урокам, но и взрослым вспомнить о самых главных ценностях. Воссоединитесь со своими детьми через сказку, подарите себе и им моменты настоящего волшебства и тепла в мире, где каждый из нас может снова поверить в чудеса и в себя.</p>
 </section>
 
 <!-- ================= О ПРЕМИИ ================= -->
 <section>
     <h2>О премии «Заветная Мечта»</h2>
     <img src="award.jpeg" class="section-img">
-    <p>«Заветная мечта» — российская национальная премия...</p>
+    <p>«Заветная мечта» — российская национальная премия в области детской литературы. Учреждена в 2005 году Детским благотворительным фондом «Заветная мечта» . Вручалась с 2006 по 2009 год.</p>
 </section>
 
 <!-- ================= ОБ АВТОРЕ ================= -->
 <section>
     <h2>Об авторе</h2>
-    <img src="authorfoto1.jpg" class="author-photo">
-    <p>Василиса Сабашникова родом из Нижнего Новгорода...</p>
+    <img src="authorfoto1.jpg.webp" class="author-photo">
+    <p>Василиса Сабашникова родом из Нижнего Новгорода, Россия. Способность
+пересказывать истории, написанные жизнью, она, вероятно, унаследовала от своей
+прабабушки Ольги Сергеевны, которую в ее тесном окружении называли «Чехов в юбке».
+Василиса Сабашникова живет в Германии и пишет для взрослых и детей.
+В 2006 году Василиса стала финалистом Национальной детской литературной премии.
+В 2007 году – одним из победителей Европейского фестиваля на лучший русский язык в Санкт-Петербурге.</p>
 </section>
 
 </body>
