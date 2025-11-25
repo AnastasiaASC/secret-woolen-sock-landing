@@ -15,6 +15,137 @@ body {
     background: #f3f8ff;
 }
 
+/* ================= БАННЕР ================= */
+.winter-banner {
+    position: relative;
+    padding: 160px 20px 180px; /* kompakter */
+    text-align: center;
+    color: white;
+    overflow: hidden;
+
+    background: url("fon5.png") center/cover no-repeat;
+}
+
+/* Луна */
+.moon {
+    position: absolute;
+    top: 40px;
+    left: 30%; /* leicht nach links */
+    transform: translateX(-50%);
+    width: 170px;
+    height: 170px;
+    background: radial-gradient(circle, #fff8d2 10%, #ffd973 45%, #c8a23b 70%, transparent 100%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 60px 30px rgba(255, 225, 150, 0.55),
+        0 0 120px 70px rgba(255, 240, 180, 0.25);
+    z-index: 2;
+}
+
+/* Заголовок поверх луны */
+.banner-title {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 64px;
+    color: #e6f5ff;
+    text-shadow:
+        0 0 12px #ffffff,
+        0 0 35px #b8eaff,
+        0 0 65px #aee0ff;
+}
+
+.banner-title::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180%;
+    height: 80px;
+    background: radial-gradient(circle,
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0)
+    );
+    filter: blur(22px);
+    z-index: -1;
+}
+
+/* ================= ИЛЛЮСТРАЦИИ ================= */
+.banner-illustration-left,
+.banner-illustration-right {
+    position: absolute;
+    bottom: 0;
+    width: 130px; /* kleiner */
+    opacity: 0.9;
+    filter: drop-shadow(0 0 22px rgba(230, 230, 255, 0.4)) brightness(1.1);
+    z-index: 4;
+}
+
+.banner-illustration-left { left: 2%; }
+.banner-illustration-right { right: 2%; }
+
+/* ================= КНОПКИ ================= */
+.buttons {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    z-index: 6;
+}
+
+.btn {
+    position: relative;
+    background: rgba(5, 35, 80, 0.7);
+    border: 2px solid rgba(255,255,255,0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 14px;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 12px rgba(10, 40, 90, 0.6);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: rgba(5, 35, 80, 0.9);
+    transform: translateY(-2px);
+}
+
+/* Иконки */
+.icon {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 5px rgba(170,220,255,0.9));
+}
+
+/* ================= СЕКЦИИ ================= */
+section {
+    max-width: 900px;
+    margin: -20px auto 0; /* nach oben gezogen */
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 36px;
+    color: #0d1540;
+}
+
+.section-img {
+    max-width: 260px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+}
+
 /* Автор */
 .author-photo {
     width: 160px;
@@ -23,109 +154,7 @@ body {
     display: block;
 }
 
-/* ================= БАННЕР ================= */
-/* ================= БАННЕР С ФОНОМ ================= */
-.winter-banner {
-    position: relative;
-    padding: 220px 20px 260px;
-    text-align: center;
-    color: white;
-
-    /* >>> Новый фон <<< */
-    background: url("fon.png") top center / cover no-repeat;
-
-    /* Лёгкое осветление фона, чтобы было теплее */
-    filter: brightness(1.18) saturate(1.12);
-
-    overflow: hidden;
-
-    /* Мягкий сугроб снизу — оставить */
-    clip-path: polygon(
-        0% 0%, 
-        100% 0%, 
-        100% 85%, 
-        80% 92%, 
-        60% 88%, 
-        40% 93%, 
-        20% 88%, 
-        0% 94%
-    );
-}
-
-/* Луна */
-.moon {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 160px;
-    height: 160px;
-    : radial-gradient(circle, #fff8d2 10%, #ffd973 45%, #c8a23b 70%, transparent 100%);
-    border-radius: 50%;
-    box-shadow:
-        0 0 55px 25px rgba(255, 225, 150, 0.5),
-        0 0 120px 60px rgba(255, 235, 170, 0.25);
-    z-index: 2;
-    filter: blur(1px);
-}
-
-/* Заголовок поверх луны */
-.banner-title {
-    position: absolute;
-    top: 30px; /* ВЫШЕ */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10; /* ПЕРЕКРЫВАЕТ ЛУНУ */
-    font-size: 64px;
-    color: #e6f5ff;
-    text-shadow:
-        0 0 15px #ffffff,
-        0 0 35px #b8eaff,
-        0 0 60px #aee0ff;
-}
-
-.banner-title::after {
-    content: "";
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 160%;
-    height: 70px;
-    : radial-gradient(circle,
-        rgba(255,255,255,0.8),
-        rgba(255,255,255,0)
-    );
-    filter: blur(22px);
-    z-index: -1; /* Снежный шлейф под заголовком */
-}
-
-
-/* ================= ИЛЛЮСТРАЦИИ ================= */
-.banner-illustration-left,
-.banner-illustration-right {
-    position: absolute;
-    bottom: 15px;
-    width: 260px; /* больше */
-    opacity: 0.92;
-    filter: drop-shadow(0 0 25px rgba(255,255,255,0.55)) brightness(1.12);
-    z-index: 6;
-}
-
-.banner-illustration-left {
-    left: 2%;
-}
-
-.banner-illustration-right {
-    right: 2%;
-}
-/* Центрирование всех секций */
-section {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-}
-/* ===== LANGSAM FALLENDER SCHNEE ===== */
+/* ================= СНЕГ ================= */
 .slow-snow {
     position: fixed;
     top: 0;
@@ -160,80 +189,45 @@ section {
     50% { transform: translateX(35px); }
     100% { transform: translateX(0); }
 }
-
-
-/* ================= КНОПКИ ================= */
-.buttons {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    z-index: 6;
-}
-
-.btn {
-    position: relative;
-    : linear-gradient(to bottom, #4093ff, #0b3570);
-    color: white;
-    padding: 14px 26px;
-    border-radius: 16px;
-    font-size: 22px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 0 15px rgba(98,180,255,0.6);
-    transition: 0.3s;
-}
-
-.btn:hover {
-    box-shadow: 0 0 25px rgba(140,210,255,0.8);
-    transform: translateY(-3px);
-}
-
-/* Снежная шапочка над кнопкой */
-.btn::before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: 0;
-    width: 100%;
-    height: 22px;
-    : url('data:image/svg+xml;utf8,<svg width="200" height="40" xmlns="http://www.w3.org/2000/svg"><path d="M0 25 Q20 5 40 20 T80 15 T120 20 T160 10 T200 25 L200 40 L0 40 Z" fill="white"/></svg>') no-repeat center/100% 100%;
-    opacity: 0.95;
-}
-
-/* Иконки */
-.icon {
-    width: 26px;
-    height: 26px;
-    filter: drop-shadow(0 0 5px rgba(170,220,255,0.9));
-}
 </style>
 </head>
 
 <body>
 
-<!-- Падающий снег -->
+<!-- Снег -->
 <div class="slow-snow" id="slowSnow"></div>
 
-
 <script>
-for (let i = 0; i < 120; i++) {
-    let snow = document.createElement("span");
-    let size = Math.random() * 5 + 3;
-    snow.style.width = size + "px";
-    snow.style.height = size + "px";
-    snow.style.left = Math.random() * 100 + "%";
-    snow.style.animationDuration = 6 + Math.random() * 10 + "s";
-    snow.style.animationDelay = Math.random() * 5 + "s";
-    document.getElementById("snow").appendChild(snow);
+function createSlowSnow() {
+    const container = document.getElementById("slowSnow");
+    const totalSnow = 130;
+
+    for (let i = 0; i < totalSnow; i++) {
+        const flake = document.createElement("div");
+        flake.classList.add("snowflake");
+
+        const size = 3 + Math.random() * 5;
+        const left = Math.random() * 100;
+        const duration = 14 + Math.random() * 12;
+        const delay = Math.random() * 12;
+
+        flake.style.width = size + "px";
+        flake.style.height = size + "px";
+        flake.style.left = left + "%";
+        flake.style.animationDuration = duration + "s";
+        flake.style.animationDelay = delay + "s";
+
+        container.appendChild(flake);
+    }
 }
+
+createSlowSnow();
 </script>
+
 
 <!-- БАННЕР -->
 <header class="winter-banner">
+
     <div class="moon"></div>
 
     <img src="veljesik2.png" class="banner-illustration-left" alt="">
@@ -241,6 +235,7 @@ for (let i = 0; i < 120; i++) {
 
     <h1 class="banner-title">Зимние приключения в тайге</h1>
 
+    <!-- Кнопки -->
     <div class="buttons">
 
         <a href="#" class="btn">
@@ -275,85 +270,28 @@ for (let i = 0; i < 120; i++) {
 
     </div>
 </header>
+
+
 <!-- О КНИГЕ -->
 <section>
     <h2>О книге</h2>
-    <img src="Cover_Winter_Color.jpeg" class="section-img" alt="Обложка книги" />
-
-    <p>
-        «Заветная Мечта» — российская национальная премия в области детской литературы.
-        Учреждена в 2005 году Детским благотворительным фондом «Заветная мечта».
-       
-    </p>
+    <img src="Cover_Winter_Color.jpg" class="section-img" alt="Обложка книги" />
+    <p>«Заветная Мечта» — российская национальная премия...</p>
 </section>
 
 <!-- О ПРЕМИИ -->
 <section>
     <h2>О премии «Заветная Мечта»</h2>
     <img src="award.jpeg" class="section-img" alt="Премия Заветная Мечта" />
-
-    <p>
-        Премия «Заветная Мечта» присуждается лучшим авторам современной детской литературы.
-        Она поддерживает талантливых писателей и помогает открывать новые имена.
-    </p>
+    <p>Премия «Заветная Мечта» присуждается лучшим авторам...</p>
 </section>
 
 <!-- ОБ АВТОРЕ -->
 <section>
     <h2>Об авторе</h2>
-
     <img src="authorfoto1.jpg" class="author-photo" alt="Автор книги" />
-
-    <p>
-        Здесь можно разместить информацию об авторе: биографию, достижения,
-        историю создания книги — всё, что тебе важно рассказать читателям.
-    </p>
+    <p>Здесь можно разместить информацию об авторе...</p>
 </section>
-
-<!-- ОТЗЫВЫ -->
-<section>
-    <h2>Отзывы</h2>
-
-    <div class="reviews">
-
-        <div class="review">
-            <img src="review1.jpeg" alt="читатель">
-            <p>«Книга заставила меня плакать и улыбаться одновременно. Сильная, добрая сказка!»</p>
-        </div>
-
-        <div class="review">
-            <img src="review2.jpeg" alt="читатель">
-            <p>«Я прочитала на одном дыхании. Это история, которая остаётся с тобой надолго.»</p>
-        </div>
-
-    </div>
-</section>
-<script>
-function createSlowSnow() {
-    const container = document.getElementById("slowSnow");
-    const totalSnow = 120; // Anzahl der Schneeflocken
-
-    for (let i = 0; i < totalSnow; i++) {
-        const flake = document.createElement("div");
-        flake.classList.add("snowflake");
-
-        const size = 2 + Math.random() * 6;
-        const left = Math.random() * 100;
-        const duration = 12 + Math.random() * 10;   // Langsam!
-        const delay = Math.random() * 10;
-
-        flake.style.width = size + "px";
-        flake.style.height = size + "px";
-        flake.style.left = left + "%";
-        flake.style.animationDuration = duration + "s";
-        flake.style.animationDelay = delay + "s";
-
-        container.appendChild(flake);
-    }
-}
-
-createSlowSnow();
-</script>
 
 </body>
 </html>
