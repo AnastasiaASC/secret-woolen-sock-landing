@@ -75,6 +75,27 @@
             font-weight: 700;
             margin-top: 170px;
         }
+/* ================= ИЛЛЮСТРАЦИИ ПО БОКАМ ================= */
+.banner-illustration-left,
+.banner-illustration-right {
+    position: absolute;
+    bottom: 0;
+    width: 180px;   /* ← УМЕНЬШЕННЫЙ РАЗМЕР */
+    opacity: 0.82;
+    filter:
+        drop-shadow(0 0 18px rgba(230, 200, 120, 0.35))
+        brightness(1.15);
+    z-index: 4;
+    animation: softShine 6s ease-in-out infinite alternate;
+}
+
+.banner-illustration-left {
+    left: 3%;
+}
+
+.banner-illustration-right {
+    right: 3%;
+}
 
         /* ================= ПАДАЮЩИЙ СНЕГ ================= */
         .snow {
