@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Добро пожаловать в ЗИМНЮЮ сказку <i>Тайна Шерстяного Носка</i></title>
 
-    <!-- Подключение сказочного шрифта -->
-    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
-
     <style>
         body {
             margin: 0;
-            font-family: "Marck Script", cursive;
+            font-family: "Arial", sans-serif;
             background: #f3f8ff;
         }
 
@@ -99,7 +96,7 @@
             animation: fall linear infinite, sway ease-in-out infinite;
         }
 
-        /* Мягкое плавное падение */
+         /* Мягкое плавное падение */
         @keyframes fall {
             0% { transform: translateY(-10px); opacity: 1; }
             100% { transform: translateY(110vh); opacity: 0.4; }
@@ -198,24 +195,22 @@
 <body>
 
     <!-- Падающий снег -->
-    <div class="snow"></div>
+    <div class="snow">
+        <script>
+            for (let i = 0; i < 80; i++) {
+                let snow = document.createElement("span");
+                let size = Math.random() * 4 + 2;
+                snow.style.width = size + "px";
+                snow.style.height = size + "px";
+                snow.style.left = Math.random() * 100 + "%";
+                snow.style.animationDuration = 2 + Math.random() * 4 + "s";
+                snow.style.animationDelay = Math.random() * 5 + "s";
+                document.querySelector(".snow").appendChild(snow);
+            }
+        </script>
+    </div>
 
-    <script>
-        /* Генерация снежинок */
-        const snowContainer = document.querySelector(".snow");
-        for (let i = 0; i < 80; i++) {
-            let snow = document.createElement("span");
-            let size = Math.random() * 4 + 2;
-            snow.style.width = size + "px";
-            snow.style.height = size + "px";
-            snow.style.left = Math.random() * 100 + "%";
-            snow.style.animationDuration = 2 + Math.random() * 4 + "s";
-            snow.style.animationDelay = Math.random() * 5 + "s";
-            snowContainer.appendChild(snow);
-        }
-    </script>
-
-    <!-- БАННЕР -->
+     <!-- БАННЕР -->
     <header class="winter-banner">
         <div class="moon"></div>
 
@@ -226,7 +221,6 @@
         <img src="petrunja1.jpeg" class="banner-illustration-right" alt="иллюстрация">
 
         <h1 class="banner-title">Зимние приключения в тайге</h1>
-
         <!-- КНОПКИ -->
         <div class="buttons">
             <a href="#" class="btn">Telegram</a>
@@ -242,14 +236,16 @@
         <h2>О книге</h2>
         <img src="Cover_Winter_Color.jpeg" class="section-img" alt="Обложка книги" />
 
-        <p>«Заветная Мечта» — российская национальная премия в области детской литературы. Учреждена в 2005 году Детским благотворительным фондом «Заветная мечта».</p>
+        <p>«Заветная Мечта» -  российская национальная премия в области детской литературы. Учреждена в 2005 году Детским благотворительным фондом «Заветная мечта»[1]  </p>
     </section>
 
     <!-- О ПРЕМИИ -->
     <section>
         <h2>О премии «Заветная Мечта»</h2>
         <img src="award.jpeg" class="section-img" alt="Премия Заветная Мечта" />
-        <p></p>
+
+        <p>
+        </p>
     </section>
 
     <!-- ОТЗЫВЫ -->
