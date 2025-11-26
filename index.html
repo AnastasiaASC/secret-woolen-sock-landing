@@ -1,199 +1,31 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Тайна Шерстяного Носка</title>
 
+<!-- Шрифт -->
 <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 
-<style>
-body {
-    margin: 0;
-    font-family: "Marck Script", cursive;
-    background: #f3f8ff;
-}
+<!-- CSS с анти-кэшем -->
+<link rel="stylesheet" href="styles.css?v=1">
 
-/* ================= БАННЕР ================= */
-.winter-banner {
-    position: relative;
-    padding: 100px 20px 160px; /* подняли весь блок вверх */
-    text-align: center;
-    overflow: hidden;
-    background: url("fon_new.webp") center/cover no-repeat;
-    color: white;
-}
-
-/* ТИТУЛ (перенесён выше на место луны) */
-.banner-title {
-    margin-top: 0;          /* раньше было 40px */
-    position: relative;
-    z-index: 10;
-    font-size: 64px;
-    color: #ffffff;
-    text-shadow:
-        0 0 12px #000000,
-        0 0 30px #0d1d45,
-        0 0 60px #0d1d45;
-}
-
-/* ================= ИЛЛЮСТРАЦИИ ================= */
-.banner-illustration-left,
-.banner-illustration-right {
-    position: absolute;
-    bottom: 0;
-    width: 100px;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 22px rgba(230,230,255,0.4)) brightness(1.1);
-    z-index: 4;
-}
-.banner-illustration-left { left: 2%; }
-.banner-illustration-right { right: 2%; }
-
-/* ================= КНОПКИ ================= */
-.buttons {
-    margin-top: 40px; 
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    z-index: 6;
-}
-
-.btn {
-    background: rgba(10,25,75,0.65);
-    border: 1px solid rgba(255,255,255,0.4);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 14px;
-    font-size: 18px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 0 18px rgba(0,0,30,0.4);
-    transition: 0.3s;
-}
-.btn:hover {
-    background: rgba(20,45,110,0.85);
-    transform: translateY(-2px);
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    filter: drop-shadow(0 0 5px rgba(170,220,255,0.9));
-}
-
-/* ================= СЕКЦИИ ================= */
-section {
-    max-width: 900px;
-    margin: -20px auto 0;
-    text-align: center;
-    padding: 40px 20px;
-}
-
-section p {
-    color: #0a1f4a;
-}
-
-.section-img {
-    max-width: 260px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 12px;
-}
-
-.author-photo {
-    width: 160px;
-    border-radius: 12px;
-    margin: 0 auto;
-    display: block;
-}
-
-h2 {
-    font-size: 36px;
-    color: #0d1540;
-}
-
-/* ================= СНЕГ ================= */
-.slow-snow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 99999;
-}
-
-.snowflake {
-    position: absolute;
-    top: -20px;
-    width: 14px;
-    height: 14px;
-    background: rgba(255,255,255,0.95);
-    border-radius: 50%;
-    opacity: 0.9;
-    filter: blur(1px);
-    animation: slowFall linear infinite, slowDrift ease-in-out infinite;
-}
-
-@keyframes slowFall {
-    0%   { transform: translateY(-100px); opacity: 1; }
-    100% { transform: translateY(120vh); opacity: 0.3; }
-}
-
-@keyframes slowDrift {
-    0%   { transform: translateX(0); }
-    50%  { transform: translateX(40px); }
-    100% { transform: translateX(0); }
-}
-</style>
+<!-- Снег (JS) -->
+<script src="snow.js?v=1" defer></script>
 </head>
 
 <body>
 
-<!-- ================= СНЕГ ================= -->
+<!-- Снег -->
 <div class="slow-snow" id="slowSnow"></div>
 
-<script>
-function createSlowSnow() {
-    const container = document.getElementById("slowSnow");
-    const totalSnow = 160;
-
-    for (let i = 0; i < totalSnow; i++) {
-        const flake = document.createElement("div");
-        flake.classList.add("snowflake");
-
-        const size = 4 + Math.random() * 10;
-        const left = Math.random() * 100;
-        const duration = 18 + Math.random() * 12;
-        const delay = Math.random() * 20;
-
-        flake.style.width = size + "px";
-        flake.style.height = size + "px";
-        flake.style.left = left + "%";
-        flake.style.animationDuration = duration + "s";
-        flake.style.animationDelay = delay + "s";
-
-        container.appendChild(flake);
-    }
-}
-createSlowSnow();
-</script>
-
-<!-- ================= БАННЕР ================= -->
 <header class="winter-banner">
-
-    <!-- Луна удалена полностью -->
 
     <img src="veljesik2.png.webp" class="banner-illustration-left" alt="">
     <img src="petrunja2.png.webp" class="banner-illustration-right" alt="">
 
     <h1 class="banner-title">Тайна Шерстяного Носка</h1>
-     <p> <h1 class="banner-title">Зима</h1></p>
 
     <div class="buttons">
         <a href="#" class="btn"><img class="icon" src="https://simpleicons.org/icons/telegram.svg">Telegram</a>
