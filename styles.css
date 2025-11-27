@@ -7,10 +7,10 @@ body {
 /* ================= БАННЕР ================= */
 .winter-banner {
     position: relative;
-    padding: 100px 20px 160px;
+    padding: 160px 20px 180px; /* ↑ nach unten schieben */
     text-align: center;
     overflow: hidden;
-    background: url("fon_new.webp") center/cover no-repeat;
+    background: url("fon_new.webp") center 25% / cover no-repeat; /* ↑ Hintergrund tiefer setzen */
     color: white;
 }
 
@@ -139,13 +139,17 @@ h2 {
     position: absolute;
     top: 20px;
     right: 25px;
-    font-size: 26px;
+    font-size: 22px;
     color: white;
-    text-shadow: 0 0 8px rgba(0,0,0,0.8);
+    padding: 10px 14px;
+    background: rgba(0, 40, 120, 0.6); /* blau transparent */
+    border-radius: 12px;
+    backdrop-filter: blur(3px);
     z-index: 20;
     transform: rotate(-10deg);
-    white-space: nowrap;
+    line-height: 1.2;
 }
+
 
 /* Footer */
 .site-footer {
