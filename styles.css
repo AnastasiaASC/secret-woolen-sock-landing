@@ -169,3 +169,63 @@ h2 {
 .site-footer a:hover {
     text-decoration: none;
 }
+/* --- АВТОРСКИЙ БЛОК С ПЕРСОНАЖАМИ --- */
+.author-section {
+    position: relative;
+    text-align: center;
+}
+
+.author-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+/* Авторское фото — круг */
+.author-photo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 5;
+    filter: drop-shadow(0 0 14px rgba(0,0,0,0.3));
+}
+
+/* Левая фигурка */
+.character-left {
+    position: absolute;
+    left: -140px;
+    width: 180px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+}
+
+/* Правая фигурка */
+.character-right {
+    position: absolute;
+    right: -140px;
+    width: 180px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+}
+
+/* Адаптив: на мобильных фигурки ниже */
+@media (max-width: 700px) {
+    .character-left,
+    .character-right {
+        position: relative;
+        transform: none;
+        left: 0;
+        right: 0;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .author-wrapper {
+        flex-direction: column;
+    }
+}
