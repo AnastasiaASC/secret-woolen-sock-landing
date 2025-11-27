@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     font-family: "Marck Script", cursive;
@@ -8,15 +7,13 @@ body {
 /* ================= БАННЕР ================= */
 .winter-banner {
     width: 100%;
-    height: 420px;   /* kannst du erhöhen oder reduzieren */
-    background-image: url("banner_winter_full.jpg.webp");
+    height: 420px;
+    background-image: url("DEIN_NEUES_BILD.jpg.webp"); /* ← HIER ändern */
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
     position: relative;
 }
-
-
 
 /* ТИТУЛ */
 .banner-title {
@@ -37,7 +34,7 @@ body {
     position: relative;
     bottom: auto;
     width: 120px;
-     margin: 0 20px;
+    margin: 0 20px;
     opacity: 0.95;
     filter: drop-shadow(0 0 22px rgba(230,230,255,0.4)) brightness(1.1);
     z-index: 4;
@@ -138,23 +135,22 @@ h2 {
     50%  { transform: translateX(40px); }
     100% { transform: translateX(0); }
 }
+
 /* Kleiner Text oben rechts */
 .top-note {
     position: absolute;
-    top: 40px;            /* näher am Titel statt ganz oben */
-    right: 40px;          /* etwas weiter zur Mitte */
+    top: 40px;
+    right: 40px;
     font-size: 20px;
     color: white;
-    padding: 6px 10px;    /* kompakter */
+    padding: 6px 10px;
     background: rgba(0, 40, 120, 0.55);
     border-radius: 10px;
     backdrop-filter: blur(2px);
     z-index: 20;
     transform: rotate(-8deg);
-    line-height: 0.8;     /* kleiner Zeilenabstand */
+    line-height: 0.8;
 }
-
-
 
 /* Footer */
 .site-footer {
@@ -174,6 +170,7 @@ h2 {
 .site-footer a:hover {
     text-decoration: none;
 }
+
 /* --- АВТОРСКИЙ БЛОК С ПЕРСОНАЖАМИ --- */
 .author-section {
     position: relative;
@@ -229,43 +226,50 @@ h2 {
         margin: 20px auto;
         display: block;
     }
+
+    .author-wrapper {
+        flex-direction: column;
+    }
+} /* ← notwendige Klammer eingefügt */
+
 /* MOBILE FIX — Banner-Layout retten */
 @media (max-width: 600px) {
+
     .winter-banner {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 20px 10px;
+        height: auto;
     }
 
-    /* Titel zentrieren und frei machen */
     .banner-title {
         z-index: 5;
         position: relative;
         margin-top: 20px;
+        font-size: 36px;
+        padding: 0 10px;
     }
 
-    /* rechtes blaues Feld verkleinern & darunter setzen */
-    .banner-side-box {
-        width: 90% !important;
-        max-width: 280px;
-        margin-top: 10px;
+    .top-note {
         position: relative;
-        right: 0 !important;
-        transform: none !important;
+        right: 0;
+        top: 0;
+        margin-top: 10px;
+        width: 90%;
+        text-align: center;
+        transform: none;
     }
 
-    /* Illustrationen auch stapeln */
     .banner-illustration-left,
     .banner-illustration-right {
         max-width: 40%;
         position: relative;
-        top: 0;
+        margin: 10px auto 0;
     }
-}
 
-    .author-wrapper {
-        flex-direction: column;
+    .buttons {
+        margin-top: 30px;
     }
 }
