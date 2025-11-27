@@ -1,271 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Тайна Шерстяного Носка. Зима</title>
 
-body {
-    margin: 0;
-    font-family: "Marck Script", cursive;
-    background: #f3f8ff;
-}
+<!-- Шрифт -->
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 
-/* ================= БАННЕР ================= */
-.winter-banner {
-    width: 100%;
-    height: 420px;   /* kannst du erhöhen oder reduzieren */
-    background-image: url("fon_new.webp");
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    position: relative;
-}
+<!-- CSS с анти-кэшем -->
+<link rel="stylesheet" href="styles.css?v=1">
 
+<!-- Снег (JS) -->
+<script src="snow.js?v=1" defer></script>
+</head>
 
+<body>
 
-/* ТИТУЛ */
-.banner-title {
-    margin-top: 0;
-    position: relative;
-    z-index: 10;
-    font-size: 64px;
-    color: #ffffff;
-    text-shadow:
-        0 0 12px #000000,
-        0 0 30px #0d1d45,
-        0 0 60px #0d1d45;
-}
+<!-- Снег -->
+<div class="slow-snow" id="slowSnow"></div>
 
-/* Иллюстрации */
-.banner-illustration-left,
-.banner-illustration-right {
-    position: relative;
-    bottom: auto;
-    width: 120px;
-     margin: 0 20px;
-    opacity: 0.95;
-    filter: drop-shadow(0 0 22px rgba(230,230,255,0.4)) brightness(1.1);
-    z-index: 4;
-}
-.banner-illustration-left { left: 2%; }
-.banner-illustration-right { right: 2%; }
+<header class="winter-banner">
 
-/* Кнопки */
-.buttons {
-    margin-top: 110px;
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    z-index: 6;
-    position: relative;
-}
-.btn {
-    background: rgba(10,25,75,0.65);
-    border: 1px solid rgba(255,255,255,0.4);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 14px;
-    font-size: 18px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 0 18px rgba(0,0,30,0.4);
-    transition: 0.3s;
-}
-.btn:hover {
-    background: rgba(20,45,110,0.85);
-    transform: translateY(-2px);
-}
-.icon {
-    width: 24px;
-    height: 24px;
-    filter: drop-shadow(0 0 5px rgba(170,220,255,0.9));
-}
+<!-- kleiner weißer Text oben rechts -->
+<div class="top-note">для совместного чтения
+<p>с детьми 8–11 лет</p></div>
 
-/* Секции */
-section {
-    max-width: 900px;
-    margin: -20px auto 0;
-    text-align: center;
-    padding: 40px 20px;
-}
-section p { color: #0a1f4a; }
-.section-img {
-    max-width: 260px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 12px;
-}
-.author-photo {
-    width: 160px;
-    border-radius: 12px;
-    margin: 0 auto;
-    display: block;
-}
-h2 {
-    font-size: 36px;
-    color: #0d1540;
-}
+<h1 class="banner-title">Тайна Шерстяного Носка. Зима</h1>
 
-/* Снег */
-.slow-snow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 99999;
-}
+<!-- КНОПКИ -->
+<div class="buttons">
 
-.snowflake {
-    position: absolute;
-    top: -20px;
-    width: 14px;
-    height: 14px;
-    background: rgba(255,255,255,0.95);
-    border-radius: 50%;
-    opacity: 0.9;
-    filter: blur(1px);
-    animation: slowFall linear infinite, slowDrift ease-in-out infinite;
-}
+<a href="https://t.me/secret_woolen_sock" class="btn">
+    <img class="icon" src="https://simpleicons.org/icons/telegram.svg">Telegram
+</a>
 
-@keyframes slowFall {
-    0%   { transform: translateY(-100px); opacity: 1; }
-    100% { transform: translateY(120vh); opacity: 0.3; }
-}
+<a href="https://www.youtube.com/channel/UC3Wj9z_mYC45_hBoxne0oww" class="btn">
+    <img class="icon" src="https://simpleicons.org/icons/youtube.svg">YouTube
+</a>
 
-@keyframes slowDrift {
-    0%   { transform: translateX(0); }
-    50%  { transform: translateX(40px); }
-    100% { transform: translateX(0); }
-}
-/* Kleiner Text oben rechts */
-.top-note {
-    position: absolute;
-    top: 40px;            /* näher am Titel statt ganz oben */
-    right: 40px;          /* etwas weiter zur Mitte */
-    font-size: 20px;
-    color: white;
-    padding: 6px 10px;    /* kompakter */
-    background: rgba(0, 40, 120, 0.55);
-    border-radius: 10px;
-    backdrop-filter: blur(2px);
-    z-index: 20;
-    transform: rotate(-8deg);
-    line-height: 0.8;     /* kleiner Zeilenabstand */
-}
+<a href="https://books.apple.com/de/book/%D1%82%D0%B0%D0%B9%D0%BD%D0%B0-%D1%88%D0%B5%D1%80%D1%81%D1%82%D1%8F%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BD%D0%BE%D1%81%D0%BA%D0%B0-%D0%B7%D0%B8%D0%BC%D0%B0/id6449406162" class="btn">
+    <img class="icon" src="https://simpleicons.org/icons/bookstack.svg">Купить eBook
+</a>
 
+<a href="#" class="btn" style="display:none;">
+    <img class="icon" src="https://simpleicons.org/icons/book.svg">Купить книгу
+</a>
 
+<a href="https://www.facebook.com/profile.php?id=61584501591753" class="btn">
+    <img class="icon" src="https://simpleicons.org/icons/facebook.svg">Facebook
+</a>
 
-/* Footer */
-.site-footer {
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-    font-size: 18px;
-    color: #0a1f4a;
-}
+<a href="#" class="btn" style="display:none;">
+    <img class="icon" src="https://simpleicons.org/icons/instagram.svg">Instagram
+</a>
 
-.site-footer a {
-    color: #0d1540;
-    text-decoration: underline;
-    margin: 0 8px;
-}
+<a href="#" class="btn" style="display:none;">
+    <img class="icon" src="https://simpleicons.org/icons/tiktok.svg">TikTok
+</a>
 
-.site-footer a:hover {
-    text-decoration: none;
-}
-/* --- АВТОРСКИЙ БЛОК С ПЕРСОНАЖАМИ --- */
-.author-section {
-    position: relative;
-    text-align: center;
-}
+</div> <!-- /buttons -->
+</header>
 
-.author-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 0;
-}
+<!-- Персонажи -->
+<div style="text-align:center; margin-top:-40px;">
+    <img src="veljesik2.png.webp" class="banner-illustration-left">
+    <img src="petrunja2.png.webp" class="banner-illustration-right">
+</div>
 
-/* Авторское фото — круг */
-.author-photo {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    z-index: 5;
-    filter: drop-shadow(0 0 14px rgba(0,0,0,0.3));
-}
+<!-- ================= О КНИГЕ ================= -->
+<section>
+<h2>О книге</h2>
+<img src="Cover_Winter_Color.jpg.webp" class="section-img">
+<p>
+Хотите понастольгировать и помечтать вместе с вашими детьми?  
+Читайте про новогодние приключения Дениски и его друзей! Эта история не просто для детей — она для всех, кто готов вновь ощутить себя ребёнком, верящим в чудеса.  
+Чтение о зимних приключениях десятилетних ребят — это возможность вернуться в своё собственное детство, когда магия была реальностью.  
+Эта история о дружбе, поддержке и о том, как важно оставаться верным себе.  
+</p>
+</section>
 
-/* Левая фигурка */
-.character-left {
-    position: absolute;
-    left: -140px;
-    width: 180px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 4;
-}
+<!-- ================= ОБ АВТОРЕ ================= -->
+<section>
+<h2>Об авторе</h2>
+<img src="authorfoto1.jpg.webp" class="author-photo">
+<p>
+Василиса Сабашникова родом из Нижнего Новгорода, Россия. Способность пересказывать истории, написанные жизнью, она унаследовала от прабабушки Ольги Сергеевны, которую называли «Чехов в юбке».  
+Василиса живет в Германии и пишет для взрослых и детей.  
+В 2006 году стала финалистом Национальной детской литературной премии "Заветная Мечта".  
+В 2007 году — номинирована на Европейском фестивале в Санкт-Петербурге.
+</p>
 
-/* Правая фигурка */
-.character-right {
-    position: absolute;
-    right: -140px;
-    width: 180px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 4;
-}
+<!-- VG WORT Pixel -->
+<img 
+  src="https://vg09.met.vgwort.de/na/62e0a0e45c40475d8463d6174f86ff058915ec3a7c834ea5b7725006007657b6"
+  width="1"
+  height="1"
+  alt=""
+>
+</section>
 
-/* Адаптив: на мобильных фигурки ниже */
-@media (max-width: 700px) {
-    .character-left,
-    .character-right {
-        position: relative;
-        transform: none;
-        left: 0;
-        right: 0;
-        margin: 20px auto;
-        display: block;
-    }
-/* MOBILE FIX — Banner-Layout retten */
-@media (max-width: 600px) {
-    .winter-banner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px 10px;
-    }
+<!-- ================= О ПРЕМИИ ================= -->
+<section>
+<h2>О премии «Заветная Мечта»</h2>
+<img src="award.jpeg" class="section-img">
+<p>
+«Заветная мечта» — российская национальная премия в области детской литературы.  
+Учреждена в 2005 году Детским благотворительным фондом «Заветная мечта».  
+Вручалась с 2006 по 2009 год.
+</p>
 
-    /* Titel zentrieren und frei machen */
-    .banner-title {
-        z-index: 5;
-        position: relative;
-        margin-top: 20px;
-    }
+<!-- VG WORT Pixel -->
+<img 
+  src="https://vg09.met.vgwort.de/na/62e0a0e45c40475d8463d6174f86ff058915ec3a7c834ea5b7725006007657b6"
+  width="1"
+  height="1"
+  alt=""
+>
+</section>
 
-    /* rechtes blaues Feld verkleinern & darunter setzen */
-    .banner-side-box {
-        width: 90% !important;
-        max-width: 280px;
-        margin-top: 10px;
-        position: relative;
-        right: 0 !important;
-        transform: none !important;
-    }
+<!-- ================= Отзывы ================= -->
+<section>
+<h2>Отзывы читателей</h2>
 
-    /* Illustrationen auch stapeln */
-    .banner-illustration-left,
-    .banner-illustration-right {
-        max-width: 40%;
-        position: relative;
-        top: 0;
-    }
-}
+<p>«Лена: …»</p>
+<img src="zhihorka_kot.png" class="section-img">
 
-    .author-wrapper {
-        flex-direction: column;
-    }
-}
+<p>«Юра: …»</p>
+<img src="papin_domovoj.png" class="section-img">
+
+<p>«Диана: …»</p>
+
+<!-- VG WORT Pixel -->
+<img 
+  src="https://vg09.met.vgwort.de/na/62e0a0e45c40475d8463d6174f86ff058915ec3a7c834ea5b7725006007657b6"
+  width="1"
+  height="1"
+  alt=""
+>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align:center; padding:40px 20px; color:#0a1f4a; font-size:18px;">
+    © 2024 Vasilisa Sabashnikova — Все права защищены
+    <br><br>
+    <a href="#impressum" style="color:#0a1f4a; margin-right:20px;">Impressum</a>
+    <a href="#datenschutz" style="color:#0a1f4a;">Datenschutz</a>
+</footer>
+
+</body>
+</html>
