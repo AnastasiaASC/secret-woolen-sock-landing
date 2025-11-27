@@ -229,6 +229,41 @@ h2 {
         margin: 20px auto;
         display: block;
     }
+/* MOBILE FIX — Banner-Layout retten */
+@media (max-width: 600px) {
+    .winter-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    /* Titel zentrieren und frei machen */
+    .banner-title {
+        z-index: 5;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    /* rechtes blaues Feld verkleinern & darunter setzen */
+    .banner-side-box {
+        width: 90% !important;
+        max-width: 280px;
+        margin-top: 10px;
+        position: relative;
+        right: 0 !important;
+        transform: none !important;
+    }
+
+    /* Illustrationen auch stapeln */
+    .banner-illustration-left,
+    .banner-illustration-right {
+        max-width: 40%;
+        position: relative;
+        top: 0;
+    }
+}
 
     .author-wrapper {
         flex-direction: column;
