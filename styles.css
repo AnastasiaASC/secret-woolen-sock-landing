@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: "Marck Script", cursive;
@@ -6,13 +7,15 @@ body {
 
 /* ================= БАННЕР ================= */
 .winter-banner {
+    width: 100%;
+    height: 420px;   /* kannst du erhöhen oder reduzieren */
+    background-image: url("banner_winter_full.jpg.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
     position: relative;
-    padding: 90px 20px 130px; /* kompakter */
-    text-align: center;
-    overflow: hidden;
-    background: url("fon_new.webp") center 10% / cover no-repeat; /* Bild höher */
-    color: white;
 }
+
 
 
 /* ТИТУЛ */
