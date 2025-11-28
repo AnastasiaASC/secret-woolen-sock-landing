@@ -220,10 +220,11 @@ h2 {
 .site-footer a:hover {
     text-decoration: none;
 }
-/* --- АВТОРСКИЙ БЛОК С ПЕРСОНАЖАМИ --- */
+/* ====== Авторский блок ====== */
 .author-section {
     position: relative;
     text-align: center;
+    margin-top: 80px;
 }
 
 .author-wrapper {
@@ -231,10 +232,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 40px;
     margin: 40px 0;
 }
 
-/* Авторское фото — круг */
+/* Автор */
 .author-photo {
     width: 220px;
     height: 220px;
@@ -244,46 +246,24 @@ h2 {
     filter: drop-shadow(0 0 14px rgba(0,0,0,0.3));
 }
 
-/* Левая фигурка */
-.character-left {
-    position: absolute;
-    left: -140px;
-    width: 180px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 4;
-}
-
-/* Правая фигурка */
+/* Фигурки */
+.character-left,
 .character-right {
-    position: absolute;
-    right: -140px;
     width: 180px;
-    top: 50%;
-    transform: translateY(-50%);
     z-index: 4;
 }
 
-/* Адаптив: на мобильных фигурки ниже */
+/* Mobile — Figuren untereinander */
 @media (max-width: 700px) {
+    .author-wrapper {
+        flex-direction: column;
+    }
     .character-left,
     .character-right {
-        position: relative;
-        transform: none;
-        left: 0;
-        right: 0;
-        margin: 20px auto;
-        display: block;
+        width: 160px;
     }
-/* MOBILE FIX — Banner-Layout retten */
-@media (max-width: 600px) {
-    .winter-banner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px 10px;
-    }
+}
+
 
     /* Titel zentrieren und frei machen */
     .banner-title {
