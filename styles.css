@@ -8,9 +8,9 @@ body {
 /* ================= BANNER DESKTOP FIX ================= */
 @media (min-width: 900px) {
     .winter-banner {
-        height: 300px; /* kompakter */
+        height: 400px; /* kompakter */
         background-image: url("fon_new.webp"); /* dein fixes Bannerbild */
-        background-size: contain;  /* GANZES BILD anzeigen */
+        background-size: cover;  /* GANZES BILD anzeigen */
         background-repeat: no-repeat;
         background-position: center top; /* nach oben schieben */
     }
