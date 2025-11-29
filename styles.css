@@ -3,6 +3,17 @@ body {
     font-family: "Marck Script", cursive;
     background: #f3f8ff;
 }
+/* ==================== GLOBALER BANNER (für ALLE Geräte) ==================== */
+.winter-banner {
+    width: 100%;
+    height: 380px;
+    background-image: url("banner_2.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    overflow: hidden;
+}
 
 /* ================= BANNER DESKTOP FIX ================= */
 @media (min-width: 900px) {
