@@ -319,3 +319,42 @@ h2 {
     .author-wrapper {
         flex-direction: column;
     }
+/* === NEU: BILDER LINKS UND RECHTS NEBEN JEDEM H1 ======== */
+/* ========================================================= */
+
+.h1-side {
+    height: 1.1em;
+    vertical-align: middle;
+    margin: 0 12px;
+}
+
+.h1-side.left {
+    margin-right: 18px;
+}
+
+.h1-side.right {
+    margin-left: 18px;
+}
+
+/* Mobile kleiner */
+@media (max-width: 600px) {
+    .h1-side {
+        height: 0.9em;
+        margin: 0 6px;
+    }
+}
+/* ================= MOBILE FIX FÜR .top-note ================= */
+@media (max-width: 700px) {
+    .top-note {
+        top: auto !important;           /* oben deaktivieren */
+        right: 10px !important;         /* minimaler Abstand */
+        bottom: 10px !important;        /* unten rechts im Banner */
+        background: rgba(0, 40, 120, 0.55);
+        padding: 5px 10px;
+        font-size: 16px;
+        line-height: 1.1;
+        border-radius: 8px;
+        transform: rotate(-4deg);       /* dezenter, damit nicht zu stark */
+        z-index: 40;                    /* über dem Banner, aber NICHT über H1 */
+    }
+}
