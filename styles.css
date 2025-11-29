@@ -8,7 +8,7 @@ body {
 @media (min-width: 900px) {
     .winter-banner {
         height: 400px; /* kompakter */
-        background-image: url("fon_new.webp"); /* dein fixes Bannerbild */
+        background-image: url("banner_2.webp"); /* dein fixes Bannerbild */
         background-size: cover;  /* GANZES BILD anzeigen */
         background-repeat: no-repeat;
         background-position: center top; /* nach oben schieben */
