@@ -358,3 +358,33 @@ h2 {
         z-index: 40;                    /* über dem Banner, aber NICHT über H1 */
     }
 }
+/* ===================== DONATE BUTTON (BANNER) ===================== */
+.banner-btn.donate-btn {
+    background-color: #0070ba; /* PayPal Blue */
+    border: 2px solid #005c95;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 6px;
+    transition: 0.25s ease;
+}
+
+.banner-btn.donate-btn:hover {
+    background-color: #005c95;
+    transform: scale(1.07);
+}
+
+/* Text unter dem Donate-Button */
+.donate-note {
+    font-size: 16px;
+    color: #0a1f4a;
+    text-align: center;
+    margin-top: 6px;
+    opacity: 0.85;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
