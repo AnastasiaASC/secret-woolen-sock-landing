@@ -402,8 +402,8 @@ h2 {
 .snowflake {
     position: absolute;
     top: -20px;
-    width: 18px;
-    height: 18px;
+    width: 26px;
+    height: 26px;
    background-image: url("snowflake-gold.png");
     background-size: contain;
     background-repeat: no-repeat;
