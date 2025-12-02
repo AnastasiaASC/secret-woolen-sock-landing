@@ -362,41 +362,63 @@ h2 {
     font-family: "Marck Script", cursive;
 }
 
-/* Schnee-Container */
+/* ================= SCHNEE – GLOBAL ================= */
+
 .snow-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 500; /* nicht über Text */
 }
 
-/* Schneeflocke */
+/* Die Schneeflocke */
 .snowflake {
     position: absolute;
     top: -20px;
-    width: 40px;  /* Größe deiner Flocke */
-    height: 40px;
-    background-image: url("snowflake_glitter.webp"); /* <— DEINE Datei */
+    width: 14px;   /* Standardgröße Desktop */
+    height: 14px;
+    background-image: url("snowflake_glitter.webp");
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.9;
-    animation: fall linear infinite;
-    pointer-events: none;
+    opacity: 0.75;
+    animation: slowFall linear infinite,
+               slowDrift ease-in-out infinite,
+               spin linear infinite;
 }
 
-@keyframes fall {
-    from {
-        transform: translateY(-10vh);
-        opacity: 1;
+/* ======= MOBILE FIX ======= */
+@media (max-width: 600px) {
+    .snowflake {
+        width: 9px;   /* kleinere Flocken mobil */
+        height: 9px;
+        opacity: 0.55; /* dezenter */
     }
-    to {
-        transform: translateY(110vh);
-        opacity: 0.2;
-    }
+}
+
+/* ======= Animationen ======= */
+
+/* LANGSAM FALLEN — 200 Sekunden pro Fall */
+@keyframes slowFall {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(110vh); }
+}
+
+/* Seitliches Driften */
+@keyframes slowDrift {
+    0% { margin-left: -20px; }
+    50% { margin-left: 20px; }
+    100% { margin-left: -20px; }
+}
+
+/* Langsame Rotation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 }
 /* Weniger Abstand zwischen Abschnitten */
 section {
@@ -410,13 +432,13 @@ section {
 .section-img,
 .character-left,
 .character-right {
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
 }
 
 /* Absätze enger machen */
 section p {
-    margin-top: 6px !important;
-    margin-bottom: 10px !important;
+    margin-top: 3px !important;
+    margin-bottom: 6px !important;
     line-height: 1.35; /* kompakterer Text */
 }
