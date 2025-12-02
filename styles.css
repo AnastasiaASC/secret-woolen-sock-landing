@@ -165,7 +165,7 @@ section {
     max-width: 900px;
     margin: -20px auto 0;
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px 10px;
 }
 section p { color: #0a1f4a; }
 .section-img {
@@ -402,8 +402,8 @@ h2 {
 .snowflake {
     position: absolute;
     top: -20px;
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
    background-image: url("snowflake-gold.png");
     background-size: contain;
     background-repeat: no-repeat;
