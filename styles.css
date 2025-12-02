@@ -165,18 +165,18 @@ section {
     max-width: 900px;
     margin: -20px auto 0;
     text-align: center;
-    padding: 20px 10px;
+    padding: 10px 5px;
 }
 section p { color: #0a1f4a; }
 .section-img {
     max-width:400px;
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
     border-radius: 12px;
 }
 .author-photo {
     width: 160px;
-    border-radius: 12px;
+    border-radius: 16px;
     margin: 0 auto;
     display: block;
 }
