@@ -362,7 +362,7 @@ h2 {
     font-family: "Marck Script", cursive;
 }
 
-/* ================= SCHNEE – GLOBAL ================= */
+/* ================= SCHNEE ================= */
 
 .snow-container {
     position: fixed;
@@ -372,53 +372,46 @@ h2 {
     height: 100vh;
     pointer-events: none;
     overflow: hidden;
-    z-index: 500; /* nicht über Text */
+    z-index: 10; 
 }
 
-/* Die Schneeflocke */
 .snowflake {
     position: absolute;
-    top: -20px;
-    width: 14px;   /* Standardgröße Desktop */
+    top: -10px;
+    width: 14px;
     height: 14px;
-    background-image: url("snowflake_glitter.webp");
+    background-image: url("snowflake_gitter.webp");
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.75;
-    animation: slowFall linear infinite,
-               slowDrift ease-in-out infinite,
-               spin linear infinite;
+    opacity: 0.8;
+    animation: fall linear infinite, drift ease-in-out infinite, spin linear infinite;
 }
 
-/* ======= MOBILE FIX ======= */
-@media (max-width: 600px) {
+/* Mobile kleinere Flocken */
+@media (max-width: 700px) {
     .snowflake {
-        width: 9px;   /* kleinere Flocken mobil */
+        width: 9px;
         height: 9px;
-        opacity: 0.55; /* dezenter */
+        opacity: 0.6;
     }
 }
 
-/* ======= Animationen ======= */
+/* ANIMATIONEN */
 
-/* LANGSAM FALLEN — 200 Sekunden pro Fall */
-@keyframes slowFall {
+@keyframes fall {
     0% { transform: translateY(-10vh); }
     100% { transform: translateY(110vh); }
 }
 
-/* Seitliches Driften */
-@keyframes slowDrift {
-    0% { margin-left: -20px; }
-    50% { margin-left: 20px; }
-    100% { margin-left: -20px; }
+@keyframes drift {
+    0%, 100% { margin-left: -15px; }
+    50% { margin-left: 15px; }
 }
 
-/* Langsame Rotation */
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-}
+
 }
 /* Weniger Abstand zwischen Abschnitten */
 section {
