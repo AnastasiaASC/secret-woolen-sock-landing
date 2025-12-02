@@ -380,7 +380,7 @@ h2 {
     top: -20px;
     width: 40px;  /* Größe deiner Flocke */
     height: 40px;
-    background-image: url("snowflake-gold.png"); /* <— DEINE Datei */
+    background-image: url("snowflake_glitter.webp"); /* <— DEINE Datei */
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.9;
