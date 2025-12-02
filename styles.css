@@ -384,11 +384,7 @@ h2 {
     margin-right: auto;
     line-height: 1.4;
     font-family: "Marck Script", cursive;
-}
-
-/* ================= SCHNEE ================= */
-
-.snow-container {
+}.snow-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -396,45 +392,30 @@ h2 {
     height: 100vh;
     pointer-events: none;
     overflow: hidden;
-    z-index: 10; 
+    z-index: 9999;
 }
 
 .snowflake {
     position: absolute;
-    top: -10px;
-    width: 14px;
-    height: 14px;
-    background-image: url("snowflake_glitter.webp");
+    top: -20px;
+    width: 18px;
+    height: 18px;
+    background-image: url("snowflake_glitter.webp"); /* <-- DEINE DATEI */
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.8;
-    animation: fall linear infinite, drift ease-in-out infinite, spin linear infinite;
+    opacity: 0.9;
+    animation: fall linear infinite, spin linear infinite;
 }
-
-/* Mobile kleinere Flocken */
-@media (max-width: 700px) {
-    .snowflake {
-        width: 9px;
-        height: 9px;
-        opacity: 0.6;
-    }
-}
-
-/* ANIMATIONEN */
 
 @keyframes fall {
     0% { transform: translateY(-10vh); }
     100% { transform: translateY(110vh); }
 }
 
-@keyframes drift {
-    0%, 100% { margin-left: -15px; }
-    50% { margin-left: 15px; }
-}
-
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
 
 }
 /* Weniger Abstand zwischen Abschnitten */
