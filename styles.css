@@ -418,3 +418,25 @@ h2 {
     0% { background-position: 0 0, 0 0, 0 0; }
     100% { background-position: 0 2000px, 0 1500px, 0 1000px; }
 }
+/* Weniger Abstand zwischen Abschnitten */
+section {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Weniger Abstand zwischen Bildern und Text */
+.section-img,
+.character-left,
+.character-right {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Absätze enger machen */
+section p {
+    margin-top: 8px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.35; /* kompakterer Text */
+}
