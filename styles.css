@@ -395,7 +395,6 @@ h2 {
     font-family: "Marck Script", cursive;
 }
 
-/* ========= SIMPLE CSS SNOW (NO JS NEEDED) ========= */
 .snow-container {
     pointer-events: none;
     position: fixed;
@@ -406,14 +405,15 @@ h2 {
     z-index: 9999;
 
     background-image:
-        url("snowflake.png"),
-        url("snowflake.png"),
-        url("snowflake.png");
+        url("https://i.ibb.co/ZVg0Q0h/snowflake-small.png"),
+        url("https://i.ibb.co/ZVg0Q0h/snowflake-small.png"),
+        url("https://i.ibb.co/ZVg0Q0h/snowflake-small.png");
 
     background-repeat: repeat;
-    background-size: 180px; /* Schneeflocken-Größe */
+    background-size: 180px;
     animation: snow 60s linear infinite;
 }
+
 @keyframes snow {
     0% { background-position: 0 0, 0 0, 0 0; }
     100% { background-position: 0 2000px, 0 1500px, 0 1000px; }
