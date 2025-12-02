@@ -166,14 +166,17 @@
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".snow-container");
 
-    for (let i = 0; i < 30; i++) { // Anzahl Schneeflocken
+    const flakes = 30; // Anzahl der Flocken
+    for (let i = 0; i < flakes; i++) {
         const flake = document.createElement("div");
-        flake.className = "snowflake";
+        flake.classList.add("snowflake");
 
         flake.style.left = Math.random() * 100 + "vw";
-        flake.style.animationDuration = 9 + Math.random() * 11 + "s";
-        flake.style.animationDelay = Math.random() * 10 + "s";
-        flake.style.transform = "scale(" + (0.4 + Math.random()) + ")";
+
+        /* Jede Schneeflocke fällt unterschiedlich langsam */
+        const fallDuration = 180 + Math.random() * 100; // 180–280 Sekunden
+        flake.style.animationDuration =
+            `${fallDuration}s, 6s, ${20 + Math.random()*20}s`;
 
         container.appendChild(flake);
     }
