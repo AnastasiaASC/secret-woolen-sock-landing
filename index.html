@@ -174,15 +174,17 @@ document.addEventListener("DOMContentLoaded", () => {
         // langsames Fallen 150–250s
         const fall = 150 + Math.random() * 100;
 
-        // langsame Rotation 20–40s
+        // Rotation 20–40s
         const spin = 20 + Math.random() * 20;
 
-        flake.style.animationDuration = `${fall}s, 6s, ${spin}s`;
+        // NUR ZWEI ZEITEN!!!
+        flake.style.animationDuration = `${fall}s, ${spin}s`;
 
         container.appendChild(flake);
     }
 });
 </script>
+
 </body>
 
 </html>
