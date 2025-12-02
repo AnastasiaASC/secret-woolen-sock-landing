@@ -5,6 +5,12 @@ body {
     font-size: 22px;   /* NEU – größerer Text überall */
     line-height: 1.6;  /* NEU – schöner Absatz */
 }
+body {
+    background: rgba(20, 40, 80, 0.35); /* мягкий прозрачный синий */
+    backdrop-filter: blur(4px);        /* лёгкое размытие — эффект тумана */
+    margin: 0;
+}
+
 /* ==================== GLOBALER BANNER (für ALLE Geräte) ==================== */
 .winter-banner {
     width: 100%;
