@@ -164,26 +164,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".snow-container");
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 50; i++) {
         const flake = document.createElement("div");
         flake.classList.add("snowflake");
 
-        // zufällige Startposition
+        // Position im Bildschirm
         flake.style.left = Math.random() * 100 + "vw";
 
-        // langsames Fallen 150–250s
-        const fall = 150 + Math.random() * 100;
-
-        // Rotation 20–40s
-        const spin = 20 + Math.random() * 20;
-
-        // NUR ZWEI ZEITEN!!!
-        flake.style.animationDuration = `${fall}s, ${spin}s`;
+        // Dauer des Fallens
+        const fallDuration = 20 + Math.random() * 20; // 20–40 Sekunden
+        flake.style.animationDuration = `${fallDuration}s`;
 
         container.appendChild(flake);
     }
 });
 </script>
+
 
 </body>
 
