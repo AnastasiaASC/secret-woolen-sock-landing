@@ -2,6 +2,8 @@ body {
     margin: 0;
     font-family: "Marck Script", cursive;
     background: #f3f8ff;
+    font-size: 22px;   /* NEU – größerer Text überall */
+    line-height: 1.6;  /* NEU – schöner Absatz */
 }
 /* ==================== GLOBALER BANNER (für ALLE Geräte) ==================== */
 .winter-banner {
@@ -161,7 +163,7 @@ section {
 }
 section p { color: #0a1f4a; }
 .section-img {
-    max-width: 260px;
+    max-width:400px;
     display: block;
     margin: 20px auto;
     border-radius: 12px;
