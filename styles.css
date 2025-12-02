@@ -420,23 +420,23 @@ h2 {
 }
 /* Weniger Abstand zwischen Abschnitten */
 section {
-    margin-top: 20px !important;
-    margin-bottom: 20px !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    padding-top: 5px !important;
+    padding-bottom:5px !important;
 }
 
 /* Weniger Abstand zwischen Bildern und Text */
 .section-img,
 .character-left,
 .character-right {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
 }
 
 /* Absätze enger machen */
 section p {
-    margin-top: 8px !important;
-    margin-bottom: 12px !important;
+    margin-top: 6px !important;
+    margin-bottom: 10px !important;
     line-height: 1.35; /* kompakterer Text */
 }
