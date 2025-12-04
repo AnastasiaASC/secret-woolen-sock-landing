@@ -268,18 +268,22 @@ h2 {
 /* Фигурки */
 .character-left,
 .character-right {
-    width: 180px;
-    z-index: 4;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
 }
 
 /* Mobile — Figuren untereinander */
 @media (max-width: 700px) {
     .author-wrapper {
         flex-direction: column;
+         margin-top: 15px !important;   /* vorher 40px */
+    gap: 15px !important;          /* vorher 40px */
     }
     .character-left,
     .character-right {
         width: 160px;
+         margin-top: 5px !important;
+    margin-bottom: 5px !important;
     }
 }
 
@@ -448,11 +452,16 @@ section p {
 }
 /* Abstand der Autor-Sektion halbieren */
 .author-section {
-    margin-top: 40px !important;   /* vorher 80px */
+    margin-top: 20px !important;   /* vorher 80px + zusätzlicher Abstand */
+    padding-top: 0 !important;
 }
 
 /* Abstand zwischen Figur und Foto halbieren */
 .author-wrapper {
     margin: 10px 0 !important;     /* vorher 40px */
     gap: 10px !important;          /* vorher 40px Abstand zwischen Figur & Foto */
+}
+section {
+    margin-bottom: 10px !important;
+    padding-bottom: 0 !important;
 }
