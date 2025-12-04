@@ -431,8 +431,8 @@ h2 {
 section {
     margin-top: 10px !important;
     margin-bottom: 10px !important;
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
+    padding-top: 2px !important;
+    padding-bottom: 1px !important;
 }
 
 /* Weniger Abstand zwischen Bildern und Text */
@@ -445,7 +445,7 @@ section {
 
 /* Absätze enger machen */
 section p {
-    margin-top: 3px !important;
-    margin-bottom: 6px !important;
+    margin-top: 1px !important;
+    margin-bottom: 3px !important;
     line-height: 1.35; /* kompakterer Text */
 }
