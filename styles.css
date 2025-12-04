@@ -464,3 +464,12 @@ section h2 {
 .author-photo {
     margin-top: 5px !important;     /* statt ca. 40–60px */
 }
+/* Abstand unter dem Titel (О книге) reduzieren */
+section h2 {
+    margin-bottom: 8px !important;  /* enger am Bild */
+}
+
+/* Abstand über der Zeichnung (nur in dieser Sektion) reduzieren */
+.section-img {
+    margin-top: 5px !important;
+}
