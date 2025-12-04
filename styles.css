@@ -439,3 +439,7 @@ section p {
     margin-bottom: 6px !important;
     line-height: 1.35; /* kompakterer Text */
 }
+.winter-banner + section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
