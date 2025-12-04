@@ -402,8 +402,8 @@ h2 {
 .snowflake {
     position: absolute;
     top: -20px;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
    background-image: url("snowflake-gold.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -445,4 +445,14 @@ section p {
 }
 .read-button {
     margin-bottom: 30px !important;   /* Abstand nach unten */
+}
+/* Abstand der Autor-Sektion halbieren */
+.author-section {
+    margin-top: 40px !important;   /* vorher 80px */
+}
+
+/* Abstand zwischen Figur und Foto halbieren */
+.author-wrapper {
+    margin: 20px 0 !important;     /* vorher 40px */
+    gap: 20px !important;          /* vorher 40px Abstand zwischen Figur & Foto */
 }
