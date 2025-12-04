@@ -398,8 +398,8 @@ h2 {
 .snowflake {
     position: absolute;
     top: -20px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
    background-image: url("snowflake-gold.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -459,8 +459,8 @@ section {
 }
 @media (max-width: 700px) {
     .snowflake {
-        width: 24px !important;
-        height: 24px !important;
+        width: 14px !important;
+        height: 14px !important;
         animation-duration: 18s !important;
     }
 }
@@ -483,4 +483,12 @@ section {
     height: auto !important;
     margin-top: 5px !important;
     margin-bottom: 5px !important;
+}
+.author-section {
+    margin-top: 5px !important;
+}
+
+.author-wrapper {
+    margin-top: 10px !important;
+    gap: 10px !important;
 }
