@@ -279,6 +279,15 @@ h2 {
     width: 180px;
     z-index: 4;
 }
+.character-left,
+.character-right {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 4;
+    filter: drop-shadow(0 0 14px rgba(0,0,0,0.3));
+}
 
 /* Mobile — Figuren untereinander */
 @media (max-width: 700px) {
