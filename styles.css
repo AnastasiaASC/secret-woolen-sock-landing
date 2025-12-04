@@ -453,6 +453,6 @@ section p {
 
 /* Abstand zwischen Figur und Foto halbieren */
 .author-wrapper {
-    margin: 20px 0 !important;     /* vorher 40px */
-    gap: 20px !important;          /* vorher 40px Abstand zwischen Figur & Foto */
+    margin: 10px 0 !important;     /* vorher 40px */
+    gap: 10px !important;          /* vorher 40px Abstand zwischen Figur & Foto */
 }
