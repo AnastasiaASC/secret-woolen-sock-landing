@@ -429,8 +429,8 @@ h2 {
 
 /* Weniger Abstand zwischen Abschnitten */
 section {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
     padding-top: 2px !important;
     padding-bottom: 1px !important;
 }
@@ -451,13 +451,13 @@ section p {
 }
 /* Abstand unter Überschrift (Об авторе) verkleinern */
 section h2 {
-    margin-bottom: 10px !important; /* vorher viel größer */
+    margin-bottom: 5px !important; /* vorher viel größer */
 }
 
 /* Abstand unter dem kleinen Tierbild reduzieren */
 .section-img {
     margin-top: 5px !important;     /* enger am Titel */
-    margin-bottom: 10px !important; /* enger vor dem runden Foto */
+    margin-bottom: 5px !important; /* enger vor dem runden Foto */
 }
 
 /* Rundes Autorenfoto enger setzen */
