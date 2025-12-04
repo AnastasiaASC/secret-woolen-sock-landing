@@ -305,14 +305,6 @@ h2 {
         transform: none !important;
     }
 
-    /* Illustrationen auch stapeln */
-    .banner-illustration-left,
-    .banner-illustration-right {
-        max-width: 40%;
-        position: relative;
-        top: 0;
-    }
-
     .author-wrapper {
         flex-direction: column;
     }
