@@ -449,3 +449,18 @@ section p {
     margin-bottom: 3px !important;
     line-height: 1.35; /* kompakterer Text */
 }
+/* Abstand unter Überschrift (Об авторе) verkleinern */
+section h2 {
+    margin-bottom: 10px !important; /* vorher viel größer */
+}
+
+/* Abstand unter dem kleinen Tierbild reduzieren */
+.section-img {
+    margin-top: 5px !important;     /* enger am Titel */
+    margin-bottom: 10px !important; /* enger vor dem runden Foto */
+}
+
+/* Rundes Autorenfoto enger setzen */
+.author-photo {
+    margin-top: 5px !important;     /* statt ca. 40–60px */
+}
