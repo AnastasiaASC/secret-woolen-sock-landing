@@ -473,3 +473,22 @@ section {
     }
 }
 
+/* === KORREKTUR: Banner-Figuren wieder normal groß === */
+.banner-illustration-left,
+.banner-illustration-right {
+    width: 180px !important;
+    max-width: 180px !important;
+    height: auto !important;
+    position: absolute !important;
+    bottom: -20px !important;
+    top: auto !important;
+}
+
+/* === KORREKTUR: Author-Figuren wieder normal === */
+.character-left,
+.character-right {
+    width: 180px !important;
+    height: auto !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
