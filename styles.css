@@ -2,16 +2,17 @@ body {
     margin: 0;
     font-family: "Marck Script", cursive;
     background: #e8f0ff;
-    font-size: 22px;   /* NEU – größerer Text überall */
-    line-height: 1.6;  /* NEU – schöner Absatz */
+    font-size: 22px;   /* größerer Text überall */
+    line-height: 1.6;  /* schöner Absatz */
 }
+
 body {
-    background: rgba(20, 40, 80, 0.35); /* мягкий прозрачный синий */
-    backdrop-filter: blur(4px);        /* лёгкое размытие — эффект тумана */
+    background: rgba(20, 40, 80, 0.35); /* transparenter blauer Nebel */
+    backdrop-filter: blur(4px);
     margin: 0;
 }
 
-/* ==================== GLOBALER BANNER (für ALLE Geräte) ==================== */
+/* ==================== GLOBALER BANNER ==================== */
 .winter-banner {
     width: 100%;
     height: 380px;
@@ -23,22 +24,16 @@ body {
     overflow: hidden;
 }
 
-/* ================= BANNER DESKTOP FIX ================= */
 @media (min-width: 900px) {
     .winter-banner {
-        height: 400px; /* kompakter */
-        background-image: url("banner_2.webp"); /* dein fixes Bannerbild */
-        background-size: cover;  /* GANZES BILD anzeigen */
-        background-repeat: no-repeat;
-        background-position: center top; /* nach oben schieben */
+        height: 400px;
+        background-position: center top;
     }
 
-    /* Titel etwas nach unten */
     .banner-title {
         margin-top: 40px;
     }
 
-    /* Buttons näher an den Titel */
     .buttons {
         margin-top: 20px;
     }
@@ -55,23 +50,20 @@ body {
     z-index: 20;
 }
 
-/* Titel */
+/* ==================== TITEL ==================== */
 .banner-title {
     margin: 0;
     text-align: center;
     font-size: 58px;
     color: #ffffff;
-    text-shadow:
-        0 0 12px #000,
-        0 0 30px #0d1d45;
+    text-shadow: 0 0 12px #000, 0 0 30px #0d1d45;
     z-index: 20;
     position: relative;
 }
 
-/* Untertitel „Зима“ */
+/* Untertitel */
 .subtitle {
-    margin: 0;
-    margin-top: -4px;
+    margin: -6px 0 0 0; /* etwas dichter */
     text-align: center;
     font-size: 48px;
     color: #ffffff;
@@ -82,7 +74,7 @@ body {
 
 /* Blaues Feld */
 .blue-box {
-    margin: 10px auto 0 auto;
+    margin: 8px auto 0;
     padding: 10px 25px;
     background: rgba(14, 47, 98, 0.75);
     border-radius: 12px;
@@ -94,7 +86,7 @@ body {
     position: relative;
 }
 
-/* ================= MOBILE ================= */
+/* ==================== MOBILE ==================== */
 @media (max-width: 700px) {
     .banner-illustration-left,
     .banner-illustration-right {
@@ -103,7 +95,6 @@ body {
     }
 }
 
-/* Extra-Mobile (600px) */
 @media (max-width: 600px) {
     .winter-banner {
         height: auto;
@@ -124,8 +115,7 @@ body {
     }
 }
 
-
-/* Кнопки */
+/* ==================== BUTTONS ==================== */
 .buttons {
     margin-top: 110px;
     display: flex;
@@ -135,6 +125,7 @@ body {
     z-index: 6;
     position: relative;
 }
+
 .btn {
     background: rgba(10,25,75,0.65);
     border: 1px solid rgba(255,255,255,0.4);
@@ -150,100 +141,45 @@ body {
     box-shadow: 0 0 18px rgba(0,0,30,0.4);
     transition: 0.3s;
 }
+
 .btn:hover {
     background: rgba(20,45,110,0.85);
     transform: translateY(-2px);
 }
+
 .icon {
     width: 24px;
     height: 24px;
     filter: drop-shadow(0 0 5px rgba(170,220,255,0.9));
 }
 
-/* Секции */
+/* ==================== SEKTIONEN ==================== */
 section {
     max-width: 900px;
-    margin: -20px auto 0;
+    margin: 0 auto;              /* vorher -20px → jetzt sauber */
+    padding: 15px 5px;           /* etwas kompakter */
     text-align: center;
-    padding: 10px 5px;
-}
-section p { color: #0a1f4a; }
-.section-img {
-    max-width:400px;
-    display: block;
-    margin: 10px auto;
-    border-radius: 12px;
-}
-.author-photo {
-    width: 160px;
-    border-radius: 16px;
-    margin: 0 auto;
-    display: block;
-}
-h2 {
-    font-size: 36px;
-    color: #0d1540;
 }
 
-/* Kleiner Text oben rechts */
-.top-note {
-    position: absolute;
-    top: 40px;            /* näher am Titel statt ganz oben */
-    right: 40px;          /* etwas weiter zur Mitte */
-    font-size: 20px;
-    color: white;
-    padding: 6px 10px;    /* kompakter */
-    background: rgba(0, 40, 120, 0.55);
-    border-radius: 10px;
-    backdrop-filter: blur(2px);
-    z-index: 20;
-    transform: rotate(-8deg);
-    line-height: 0.8;     /* kleiner Zeilenabstand */
-}
-
-.read-button {
-    display: block;
-    width: fit-content;
-    margin: 20px auto 0;
-    padding: 12px 28px;
-    font-size: 22px;
-    font-family: "Marck Script", cursive;
-    color: white;
-    background: linear-gradient(135deg, #8ab4ff, #4f6bdc);
-    border-radius: 12px;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: 0.25s;
-}
-
-.read-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
-}
-
-/* Footer */
-.site-footer {
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-    font-size: 18px;
+section p {
     color: #0a1f4a;
+    margin: 4px 0 8px;           /* kompaktere Absätze */
+    line-height: 1.38;
 }
 
-.site-footer a {
-    color: #0d1540;
-    text-decoration: underline;
-    margin: 0 8px;
+/* Bilder in Section */
+.section-img {
+    max-width: 400px;
+    display: block;
+    margin: 6px auto;            /* reduziert: vorher 10px */
+    border-radius: 12px;
 }
 
-.site-footer a:hover {
-    text-decoration: none;
-}
-/* ====== Авторский блок ====== */
+/* ==================== AUTHOR SECTION ==================== */
 .author-section {
     position: relative;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 40px;      /* vorher 80px */
 }
 
 .author-wrapper {
@@ -251,11 +187,19 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    margin: 40px 0;
+    gap: 20px;             /* vorher 40px */
+    margin: 20px 0;        /* vorher 40px */
 }
 
-/* Автор */
+/* Figuren links/rechts */
+.character-left,
+.character-right {
+    width: 180px;
+    margin-top: 4px;       /* Abstand reduziert */
+    margin-bottom: 4px;
+}
+
+/* Autorenfoto */
 .author-photo {
     width: 220px;
     height: 220px;
@@ -265,125 +209,16 @@ h2 {
     filter: drop-shadow(0 0 14px rgba(0,0,0,0.3));
 }
 
-/* Фигурки */
-.character-left,
-.character-right {
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-}
-
 /* Mobile — Figuren untereinander */
 @media (max-width: 700px) {
     .author-wrapper {
         flex-direction: column;
-         margin-top: 15px !important;   /* vorher 40px */
-    gap: 15px !important;          /* vorher 40px */
-    }
-    .character-left,
-    .character-right {
-        width: 160px;
-         margin-top: 5px !important;
-    margin-bottom: 5px !important;
+        gap: 15px;
+        margin-top: 15px;
     }
 }
 
-
-    /* Titel zentrieren und frei machen */
-    .banner-title {
-        z-index: 5;
-        position: relative;
-        margin-top: 20px;
-    }
-
-    /* rechtes blaues Feld verkleinern & darunter setzen */
-    .banner-side-box {
-        width: 90% !important;
-        max-width: 280px;
-        margin-top: 10px;
-        position: relative;
-        right: 0 !important;
-        transform: none !important;
-    }
-
-    .author-wrapper {
-        flex-direction: column;
-    }
-/* === NEU: BILDER LINKS UND RECHTS NEBEN JEDEM H1 ======== */
-/* ========================================================= */
-
-.h1-side {
-    height: 1.1em;
-    vertical-align: middle;
-    margin: 0 12px;
-}
-
-.h1-side.left {
-    margin-right: 18px;
-}
-
-.h1-side.right {
-    margin-left: 18px;
-}
-
-/* Mobile kleiner */
-@media (max-width: 600px) {
-    .h1-side {
-        height: 0.9em;
-        margin: 0 6px;
-    }
-}
-/* ================= MOBILE FIX FÜR .top-note ================= */
-@media (max-width: 700px) {
-    .top-note {
-        top: auto !important;           /* oben deaktivieren */
-        right: 10px !important;         /* minimaler Abstand */
-        bottom: 10px !important;        /* unten rechts im Banner */
-        background: rgba(0, 40, 120, 0.55);
-        padding: 5px 10px;
-        font-size: 16px;
-        line-height: 1.1;
-        border-radius: 8px;
-        transform: rotate(-4deg);       /* dezenter, damit nicht zu stark */
-        z-index: 40;                    /* über dem Banner, aber NICHT über H1 */
-    }
-}
-/* ===================== DONATE BUTTON (MATCH STYLE) ===================== */
-.banner-btn.donate-btn {
-    background: rgba(15, 30, 60, 0.65); /* gleiche dunkle Transparenz wie andere Buttons */
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    color: #fff;
-    font-size: 18px;
-    padding: 12px 26px;
-    border-radius: 14px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: 0.25s ease;
-}
-
-/* Hover wie bei den anderen Buttons */
-.banner-btn.donate-btn:hover {
-    background: rgba(15, 30, 60, 0.9);
-    transform: scale(1.07);
-}
-
-/* ===================== DONATE TEXT UNDER BUTTON ===================== */
-.donate-note {
-    margin-top: 10px;
-    color: #ffffff;
-    font-size: 18px;
-    text-align: center;
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
-    max-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.4;
-    font-family: "Marck Script", cursive;
-  }
-    
-    /* ===================== snow ===================== */
-    
+/* ==================== SCHNEE ==================== */
 .snow-container {
     position: fixed;
     top: 0;
@@ -400,7 +235,7 @@ h2 {
     top: -20px;
     width: 30px;
     height: 30px;
-   background-image: url("snowflake-gold.png");
+    background-image: url("snowflake-gold.png");
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 1;
@@ -409,86 +244,5 @@ h2 {
 
 @keyframes fall {
     from { transform: translateY(-10vh); }
-    to { transform: translateY(110vh); }
-}
-
-
-/* Weniger Abstand zwischen Abschnitten */
-section {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-    padding-top: 5px !important;
-    padding-bottom:5px !important;
-}
-
-/* Weniger Abstand zwischen Bildern und Text */
-.section-img,
-.character-left,
-.character-right {
-    margin-top: 3px !important;
-    margin-bottom: 3px !important;
-}
-
-/* Absätze enger machen */
-section p {
-    margin-top: 3px !important;
-    margin-bottom: 6px !important;
-    line-height: 1.35; /* kompakterer Text */
-}
-.winter-banner + section {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-.read-button {
-    margin-bottom: 30px !important;   /* Abstand nach unten */
-}
-/* Abstand der Autor-Sektion halbieren */
-.author-section {
-    margin-top: 20px !important;   /* vorher 80px + zusätzlicher Abstand */
-    padding-top: 0 !important;
-}
-
-/* Abstand zwischen Figur und Foto halbieren */
-.author-wrapper {
-    margin: 10px 0 !important;     /* vorher 40px */
-    gap: 10px !important;          /* vorher 40px Abstand zwischen Figur & Foto */
-}
-section {
-    margin-bottom: 10px !important;
-    padding-bottom: 0 !important;
-}
-@media (max-width: 700px) {
-    .snowflake {
-        width: 14px !important;
-        height: 14px !important;
-        animation-duration: 18s !important;
-    }
-}
-
-/* === KORREKTUR: Banner-Figuren wieder normal groß === */
-.banner-illustration-left,
-.banner-illustration-right {
-    width: 180px !important;
-    max-width: 180px !important;
-    height: auto !important;
-    position: absolute !important;
-    bottom: -20px !important;
-    top: auto !important;
-}
-
-/* === KORREKTUR: Author-Figuren wieder normal === */
-.character-left,
-.character-right {
-    width: 180px !important;
-    height: auto !important;
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-}
-.author-section {
-    margin-top: 5px !important;
-}
-
-.author-wrapper {
-    margin-top: 10px !important;
-    gap: 10px !important;
+    to   { transform: translateY(110vh); }
 }
