@@ -270,7 +270,7 @@ h2 {
     border-radius: 50%;
     z-index: 5;
     filter: drop-shadow(0 0 14px rgba(0,0,0,0.3));
-    margin-top: -50px; /* überlappt die Figur */
+    margin-top: -70px; /* überlappt die Figur */
 }
 
 
