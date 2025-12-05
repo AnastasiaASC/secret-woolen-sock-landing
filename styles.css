@@ -505,3 +505,26 @@ section h2 {
         margin-top: 30px !important; /* Buttons etwas nach unten */
     }
 }
+/* Mobile Schrift & Layout wieder normalisieren */
+@media (max-width: 700px) {
+    body {
+        font-size: 20px !important; /* größerer Text */
+        line-height: 1.5 !important;
+    }
+
+    section {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+        padding: 10px !important;
+    }
+
+    h2 {
+        font-size: 32px !important;
+    }
+
+    .section-img,
+    .character-left,
+    .character-right {
+        max-width: 70% !important;
+    }
+}
