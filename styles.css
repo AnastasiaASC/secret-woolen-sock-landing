@@ -483,3 +483,7 @@ section h2 {
 .section-img {
     margin-top: 5px !important;
 }
+.read-button {
+    display: inline-block; /* wichtig, damit margin wirkt */
+    margin-bottom: 30px;   /* Abstand nach unten */
+}
