@@ -454,3 +454,92 @@ h2 {
 .winter-banner {
     overflow: visible !important;
 }
+/* ================= LOGO ================= */
+.logo-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 500;
+}
+
+.site-logo {
+    height: 110px;        /* Größeres Logo */
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .site-logo {
+        height: 85px;     /* Mobile etwas kleiner */
+    }
+}
+
+/* Banner darf das Logo NICHT abschneiden */
+.winter-banner {
+    overflow: visible !important;
+}
+
+
+/* ================= MODAL-FENSTER ================= */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.modal:target {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 14px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    font-family: "Marck Script", cursive;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px;
+    border-radius: 8px;
+    border: 1px solid #999;
+    font-size: 18px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #4f6bdc;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-modal {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+    text-decoration: underline;
+}
