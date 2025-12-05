@@ -560,3 +560,7 @@ img[src*="spuren"] {
 .snow-container {
     height: 100dvh !important;
 }
+footer {
+    position: relative;
+    z-index: 1000; 
+}
