@@ -5,11 +5,9 @@ body {
     font-family: "Marck Script", cursive;
     font-size: 22px;
     line-height: 1.6;
-    background:
-        radial-gradient(circle at 50% 0%, #d4dcff 0%, #f7f9ff 70%) no-repeat,
-        radial-gradient(circle at 50% 350px, #c8d2ff 0%, #f7f9ff 75%) no-repeat,
-        #f7f9ff;
-    background-size: 140% 450px, 160% 600px, cover;
+    background: radial-gradient(circle at 20% 30%, #e8edff 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, #d6dfff 0%, transparent 60%),
+                #f7f9ff;
 }
 
 
