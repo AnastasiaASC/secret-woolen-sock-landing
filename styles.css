@@ -550,3 +550,7 @@ h2 {
 .section-img[src*="spuren"] {
     margin-bottom: 2px !important; /* минимальный зазор */
 }
+/* Исправление снега на iPhone */
+.snow-container {
+    height: 100dvh !important;
+}
