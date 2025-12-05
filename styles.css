@@ -564,3 +564,7 @@ footer {
     position: relative;
     z-index: 1000; 
 }
+/* Abstand NACH den Pfotenspuren verkleinern */
+img[src*="spuren"] {
+    margin-bottom: 4px !important;  /* nach Wunsch anpassen */
+}
