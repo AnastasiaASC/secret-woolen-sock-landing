@@ -14,9 +14,32 @@
 </head>
 
 <body>
-<a href="/" class="logo-link">
+<!-- Logo oben links -->
+<a href="#contact-form" class="logo-link">
     <img src="logo-retcon.webp" alt="Retcon Publish Logo" class="site-logo">
 </a>
+
+<!-- Kontaktformular (Modal) -->
+<div id="contact-form" class="modal">
+    <div class="modal-content">
+        <h2>Kontakt</h2>
+        <form action="mailto:info@retcon-publish.com" method="POST" enctype="text/plain">
+            <label>Ihr Name:</label>
+            <input type="text" name="Name" required>
+
+            <label>Ihre E-Mail:</label>
+            <input type="email" name="Email" required>
+
+            <label>Nachricht:</label>
+            <textarea name="Nachricht" rows="4" required></textarea>
+
+            <button type="submit">Senden</button>
+        </form>
+
+        <a href="#" class="close-modal">Schließen</a>
+    </div>
+</div>
+
 
 <header class="winter-banner">
 
