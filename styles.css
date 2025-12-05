@@ -1,18 +1,16 @@
+/* ===================== GLOBAL ===================== */
+
 body {
     margin: 0;
     font-family: "Marck Script", cursive;
-    background: #e8f0ff;
-    font-size: 22px; /* NEU – größerer Text überall */
-    line-height: 1.6; /* NEU – schöner Absatz */
+    font-size: 22px;
+    line-height: 1.6;
+    background: rgba(20, 40, 80, 0.35);
+    backdrop-filter: blur(4px);
 }
 
-body {
-    background: rgba(20, 40, 80, 0.35); /* мягкий прозрачный синий */
-    backdrop-filter: blur(4px); /* лёгкое размытие — эффект тумана */
-    margin: 0;
-}
+/* ===================== BANNER ===================== */
 
-/* ==================== GLOBALER BANNER (für ALLE Geräte) ==================== */
 .winter-banner {
     width: 100%;
     height: 380px;
@@ -24,36 +22,19 @@ body {
     overflow: hidden;
 }
 
-/* ================= BANNER DESKTOP FIX ================= */
+/* Desktop-Banner-Anpassung */
 @media (min-width: 900px) {
     .winter-banner {
-        height: 400px; /* kompakter */
-        background-image: url("banner_2.webp"); /* dein fixes Bannerbild */
-        background-size: cover; /* GANZES BILD anzeigen */
-        background-repeat: no-repeat;
-        background-position: center top; /* nach oben schieben */
+        height: 400px;
     }
 
-    /* Titel etwas nach unten */
     .banner-title {
         margin-top: 40px;
     }
 
-    /* Buttons näher an den Titel */
     .buttons {
         margin-top: 20px;
     }
-}
-
-/* Kleiner weißer Text oben rechts */
-.top-note {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    color: white;
-    font-size: 18px;
-    text-align: right;
-    z-index: 20;
 }
 
 /* Titel */
@@ -63,8 +44,8 @@ body {
     font-size: 58px;
     color: #ffffff;
     text-shadow: 0 0 12px #000, 0 0 30px #0d1d45;
-    z-index: 20;
     position: relative;
+    z-index: 20;
 }
 
 /* Untertitel „Зима“ */
@@ -75,13 +56,29 @@ body {
     font-size: 48px;
     color: #ffffff;
     text-shadow: 0 0 10px #000;
-    z-index: 20;
     position: relative;
+    z-index: 20;
 }
 
-/* Blaues Feld */
+/* Kleiner Text im Banner (Hinweis 8–11 Jahre) */
+.top-note {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 20px;
+    color: white;
+    padding: 6px 10px;
+    background: rgba(0, 40, 120, 0.55);
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    z-index: 20;
+    transform: rotate(-8deg);
+    line-height: 0.8;
+}
+
+/* Blaues Feld, falls genutzt */
 .blue-box {
-    margin: 10px auto 0 auto;
+    margin: 10px auto 0;
     padding: 10px 25px;
     background: rgba(14, 47, 98, 0.75);
     border-radius: 12px;
@@ -89,54 +86,33 @@ body {
     color: white;
     font-size: 20px;
     text-align: center;
-    z-index: 20;
     position: relative;
+    z-index: 20;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 700px) {
-    .banner-illustration-left,
-    .banner-illustration-right {
-        width: 110px;
-        bottom: -20px;
-    }
+/* Illustrationen im Banner (falls verwendet) */
+.banner-illustration-left,
+.banner-illustration-right {
+    max-width: 40%;
+    position: relative;
+    top: 0;
 }
 
-/* Extra-Mobile (600px) */
-@media (max-width: 600px) {
-    .winter-banner {
-        height: auto;
-        padding: 40px 10px 240px;
-        text-align: center;
-    }
+/* ===================== BUTTON-LEISTE ===================== */
 
-    .banner-title {
-        font-size: 46px;
-        margin-top: 0;
-    }
-
-    .banner-illustration-left,
-    .banner-illustration-right {
-        position: absolute;
-        width: 120px;
-        bottom: -20px;
-    }
-}
-
-/* Кнопки */
 .buttons {
     margin-top: 110px;
     display: flex;
     justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
-    z-index: 6;
     position: relative;
+    z-index: 6;
 }
 
 .btn {
-    background: rgba(10,25,75,0.65);
-    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(10, 25, 75, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     color: white;
     padding: 10px 20px;
     border-radius: 14px;
@@ -146,72 +122,67 @@ body {
     align-items: center;
     gap: 10px;
     backdrop-filter: blur(4px);
-    box-shadow: 0 0 18px rgba(0,0,30,0.4);
+    box-shadow: 0 0 18px rgba(0, 0, 30, 0.4);
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: rgba(20,45,110,0.85);
+    background: rgba(20, 45, 110, 0.85);
     transform: translateY(-2px);
 }
 
 .icon {
     width: 24px;
     height: 24px;
-    filter: drop-shadow(0 0 5px rgba(170,220,255,0.9));
+    filter: drop-shadow(0 0 5px rgba(170, 220, 255, 0.9));
 }
 
-/* Секции */
+/* Donate-Button (steht im HTML unterhalb von .buttons) */
+.btn.donate-btn {
+    font-size: 18px;
+    padding: 12px 26px;
+    border-radius: 14px;
+    background: rgba(15, 30, 60, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: block;
+    margin: 25px auto 0;
+    width: fit-content;
+    text-align: center;
+}
+
+/* ===================== SEKTIONEN / INHALT ===================== */
+
 section {
     max-width: 900px;
     margin: -20px auto 0;
     text-align: center;
-    padding: 10px 5px;
+    padding: 20px 10px;
 }
 
 section p {
     color: #0a1f4a;
-}
-
-.section-img {
-    max-width:200px;
-    display: block;
-    margin: 10px auto;
-    border-radius: 12px;
-}
-
-.author-photo {
-    width: 160px;
-    border-radius: 16px;
-    margin: 0 auto;
-    display: block;
+    margin-top: 8px;
+    margin-bottom: 12px;
 }
 
 h2 {
     font-size: 36px;
     color: #0d1540;
+    margin: 30px 0 15px;
 }
 
-/* Kleiner Text oben rechts */
-.top-note {
-    position: absolute;
-    top: 40px; /* näher am Titel statt ganz oben */
-    right: 40px; /* etwas weiter zur Mitte */
-    font-size: 20px;
-    color: white;
-    padding: 6px 10px; /* kompakter */
-    background: rgba(0, 40, 120, 0.55);
-    border-radius: 10px;
-    backdrop-filter: blur(2px);
-    z-index: 20;
-    transform: rotate(-8deg);
-    line-height: 0.8; /* kleiner Zeilenabstand */
+.section-img {
+    max-width: 200px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 12px;
 }
 
+/* Lesen-Button unter dem Cover */
 .read-button {
     display: block;
     width: fit-content;
-    margin: 20px auto 0;
+    margin: 20px auto 30px;
     padding: 12px 28px;
     font-size: 22px;
     font-family: "Marck Script", cursive;
@@ -219,35 +190,17 @@ h2 {
     background: linear-gradient(135deg, #8ab4ff, #4f6bdc);
     border-radius: 12px;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: 0.25s;
 }
 
 .read-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* Footer */
-.site-footer {
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-    font-size: 18px;
-    color: #0a1f4a;
-}
+/* ===================== AUTORBLOCK ===================== */
 
-.site-footer a {
-    color: #0d1540;
-    text-decoration: underline;
-    margin: 0 8px;
-}
-
-.site-footer a:hover {
-    text-decoration: none;
-}
-
-/* ====== Авторский блок ====== */
 .author-section {
     position: relative;
     text-align: center;
@@ -269,17 +222,11 @@ h2 {
     object-fit: cover;
     border-radius: 50%;
     z-index: 5;
-    filter: drop-shadow(0 0 14px rgba(0,0,0,0.3));
-    margin-top: -120px; /* überlappt die Figur */
+    filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.3));
+    margin-top: -120px; /* ragt über die Figur */
 }
 
-
-/* Фигурки */
-.character-left,
-.character-right {
-    width: 180px;
-    z-index: 4;
-}
+/* Figuren links/rechts vom Autor */
 .character-left,
 .character-right {
     width: 180px;
@@ -287,50 +234,10 @@ h2 {
     object-fit: cover;
     border-radius: 50%;
     z-index: 4;
-    filter: drop-shadow(0 0 14px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.3));
 }
 
-/* Mobile — Figuren untereinander */
-@media (max-width: 700px) {
-    .author-wrapper {
-        flex-direction: column;
-    }
-    .character-left,
-    .character-right {
-        width: 160px;
-    }
-}
-
-/* Titel zentrieren und frei machen */
-.banner-title {
-    z-index: 5;
-    position: relative;
-    margin-top: 20px;
-}
-
-/* rechtes blaues Feld verkleinern & darunter setzen */
-.banner-side-box {
-    width: 90% !important;
-    max-width: 280px;
-    margin-top: 10px;
-    position: relative;
-    right: 0 !important;
-    transform: none !important;
-}
-
-/* Illustrationen auch stapeln */
-.banner-illustration-left,
-.banner-illustration-right {
-    max-width: 40%;
-    position: relative;
-    top: 0;
-}
-
-.author-wrapper {
-    flex-direction: column;
-}
-
-/* === NEU: BILDER LINKS UND RECHTS NEBEN JEDEM H1 ======== */
+/* Kleine Bilder neben H1, falls benutzt */
 .h1-side {
     height: 1.1em;
     vertical-align: middle;
@@ -345,66 +252,28 @@ h2 {
     margin-left: 18px;
 }
 
-/* Mobile kleiner */
-@media (max-width: 600px) {
-    .h1-side {
-        height: 0.9em;
-        margin: 0 6px;
-    }
-}
+/* ===================== FOOTER ===================== */
 
-/* ================= MOBILE FIX FÜR .top-note ================= */
-@media (max-width: 700px) {
-    .top-note {
-        top: auto !important; /* oben deaktivieren */
-        right: 10px !important; /* minimaler Abstand */
-        bottom: 10px !important; /* unten rechts im Banner */
-        background: rgba(0, 40, 120, 0.55);
-        padding: 5px 10px;
-        font-size: 16px;
-        line-height: 1.1;
-        border-radius: 8px;
-        transform: rotate(-4deg); /* dezenter, damit nicht zu stark */
-        z-index: 40; /* über dem Banner, aber NICHT über H1 */
-    }
-}
-
-/* ===================== DONATE BUTTON (MATCH STYLE) ===================== */
-.banner-btn.donate-btn {
-    background: rgba(15, 30, 60, 0.65);
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    color: #fff;
-    font-size: 18px;
-    padding: 12px 26px;
-    border-radius: 14px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: 0.25s ease;
-}
-
-/* Hover wie bei den anderen Buttons */
-.banner-btn.donate-btn:hover {
-    background: rgba(15, 30, 60, 0.9);
-    transform: scale(1.07);
-}
-
-/* ===================== DONATE TEXT UNDER BUTTON ===================== */
-.donate-note {
-    margin-top: 10px;
-    color: #ffffff;
-    font-size: 18px;
+.site-footer {
     text-align: center;
-    text-shadow: 0 0 4px rgba(0,0,0,0.7);
-    max-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.4;
-    font-family: "Marck Script", cursive;
+    padding: 30px 20px;
+    margin-top: 60px;
+    font-size: 18px;
+    color: #0a1f4a;
 }
 
-/* ===================== snow ===================== */
+.site-footer a {
+    color: #0d1540;
+    text-decoration: underline;
+    margin: 0 8px;
+}
+
+.site-footer a:hover {
+    text-decoration: none;
+}
+
+/* ===================== SCHNEE ===================== */
+
 .snow-container {
     position: fixed;
     top: 0;
@@ -437,108 +306,130 @@ h2 {
     }
 }
 
-/* Weniger Abstand zwischen Abschnitten */
-section {
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-    padding-top: 2px !important;
-    padding-bottom: 1px !important;
-}
+/* ===================== MOBILE (bis 700px) ===================== */
 
-/* Weniger Abstand zwischen Bildern und Text */
-.section-img,
-.character-left,
-.character-right {
-    margin-top: 3px !important;
-    margin-bottom: 3px !important;
-}
-
-/* Absätze enger machen */
-section p {
-    margin-top: 1px !important;
-    margin-bottom: 3px !important;
-    line-height: 1.35; /* kompakterer Text */
-}
-/* Abstand unter Überschrift (Об авторе) verkleinern */
-section h2 {
-    margin-bottom: 5px !important; /* vorher viel größer */
-}
-
-/* Abstand unter dem kleinen Tierbild reduzieren */
-.section-img {
-    margin-top: 5px !important;     /* enger am Titel */
-    margin-bottom: 5px !important; /* enger vor dem runden Foto */
-}
-
-/* Rundes Autorenfoto enger setzen */
-.author-photo {
-    margin-top: 5px !important;     /* statt ca. 40–60px */
-}
-/* Abstand unter dem Titel (О книге) reduzieren */
-section h2 {
-    margin-bottom: 8px !important;  /* enger am Bild */
-}
-
-/* Abstand über der Zeichnung (nur in dieser Sektion) reduzieren */
-.section-img {
-    margin-top: 5px !important;
-}
-.read-button {
-    display: inline-block; /* wichtig, damit margin wirkt */
-    margin-bottom: 30px;   /* Abstand nach unten */
-}
-/* Donate-Button an das Layout der anderen Buttons anpassen */
-.btn.donate-btn {
-    font-size: 18px;
-    padding: 12px 26px;
-    border-radius: 14px;
-    background: rgba(15,30,60,0.65);
-    border: 1px solid rgba(255,255,255,0.4);
-}
-/* Mobile-Fix für abgeschnittenen Donate-Button */
 @media (max-width: 700px) {
+
+    body {
+        font-size: 20px;
+        line-height: 1.55;
+    }
+
     .winter-banner {
-        padding-bottom: 320px !important; /* mehr Platz unter den Buttons */
+        height: auto;
+        padding: 40px 10px 260px; /* Platz für Buttons + Donate */
+        text-align: center;
+    }
+
+    .banner-title {
+        font-size: 46px;
+        margin-top: 0;
+    }
+
+    .subtitle {
+        font-size: 38px;
     }
 
     .buttons {
-        margin-top: 30px !important; /* Buttons etwas nach unten */
-    }
-}
-/* Mobile Schrift & Layout wieder normalisieren */
-@media (max-width: 700px) {
-    body {
-        font-size: 20px !important; /* größerer Text */
-        line-height: 1.5 !important;
+        margin-top: 40px;
+        gap: 12px;
     }
 
+    .btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .btn.donate-btn {
+        margin-top: 20px;
+    }
+
+    /* Hinweis-Box unten rechts im Banner */
+    .top-note {
+        top: auto;
+        right: 10px;
+        bottom: 10px;
+        font-size: 16px;
+        padding: 5px 10px;
+        border-radius: 8px;
+        transform: rotate(-4deg);
+        line-height: 1.1;
+        z-index: 40;
+    }
+
+    /* Inhalt breiter und lesbar */
     section {
-        margin-top: 20px !important;
-        margin-bottom: 20px !important;
-        padding: 10px !important;
+        max-width: 100%;
+        margin: 10px auto 20px;
+        padding: 15px;
     }
 
     h2 {
-        font-size: 32px !important;
+        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
-    .section-img,
+    section p {
+        font-size: 19px;
+        line-height: 1.5;
+    }
+
+    .section-img {
+        max-width: 80%;
+        margin: 10px auto 15px;
+    }
+
+    .read-button {
+        font-size: 20px;
+        padding: 12px 26px;
+    }
+
+    /* Autorbereich untereinander statt nebeneinander */
+    .author-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        margin: 30px 0;
+    }
+
     .character-left,
     .character-right {
-        max-width: 70% !important;
+        width: 160px;
+        height: 160px;
+    }
+
+    .author-photo {
+        margin-top: 0;
+    }
+
+    .h1-side {
+        height: 0.9em;
+        margin: 0 6px;
     }
 }
-/*  Mehr Platz unter den Buttons auf Mobile */
-@media (max-width: 700px) {
+
+/* ===================== EXTRA-MOBILE (bis 600px) ===================== */
+
+@media (max-width: 600px) {
+
     .winter-banner {
-        padding-bottom: 360px !important;
+        padding: 32px 8px 260px;
     }
-}
-/* Mobile: natürliche Breite für Inhalte (zerstört Desktop NICHT) */
-@media (max-width: 700px) {
-    section {
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 15px;
+
+    .banner-title {
+        font-size: 40px;
+    }
+
+    .subtitle {
+        font-size: 34px;
+    }
+
+    .buttons {
+        margin-top: 30px;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 8px 14px;
     }
 }
