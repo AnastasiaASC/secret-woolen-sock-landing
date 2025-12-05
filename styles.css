@@ -433,3 +433,21 @@ h2 {
         padding: 8px 14px;
     }
 }
+.site-logo {
+    height: 70px; /* Größe des Logos */
+    width: auto;
+    display: block;
+}
+
+.logo-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 500;
+}
+
+@media (max-width: 700px) {
+    .site-logo {
+        height: 55px; /* kleiner auf Mobile */
+    }
+}
