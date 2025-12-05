@@ -223,7 +223,7 @@ h2 {
     border-radius: 50%;
     z-index: 5;
     filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.3));
-    margin-top: -120px; /* ragt über die Figur */
+    margin-top: -100px; /* ragt über die Figur */
 }
 
 /* Figuren links/rechts vom Autor */
@@ -450,4 +450,7 @@ h2 {
     .site-logo {
         height: 55px; /* kleiner auf Mobile */
     }
+}
+.winter-banner {
+    overflow: visible !important;
 }
