@@ -434,9 +434,12 @@ h2 {
     }
 }
 .site-logo {
-    height: 70px; /* Größe des Logos */
-    width: auto;
-    display: block;
+    height: auto;       /* Originalhöhe beibehalten */
+    width: 90px;        /* feste Breite, kein Verkleinern */
+    object-fit: cover;  /* sauberer runder Zuschnitt */
+    border-radius: 50%; /* rund */
+    border: 2px solid white; /* optional */
+    box-shadow: 0 0 8px rgba(0,0,0,0.4); /* optional */
 }
 
 .logo-link {
