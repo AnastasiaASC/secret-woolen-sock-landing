@@ -546,3 +546,7 @@ h2 {
     color: #333;
     text-decoration: underline;
 }
+/* Уменьшаем расстояние ТОЛЬКО после картинки следов */
+.section-img[src*="spuren"] {
+    margin-bottom: 2px !important; /* минимальный зазор */
+}
