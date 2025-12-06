@@ -559,14 +559,11 @@ img[src*="spuren"] {
     margin-bottom: 4px !important;  /* nach Wunsch anpassen */
 }
 
-.big-news-button {
-    display: inline-block;
-    padding: 10px 20px; /* kleiner */
-    background: #0d1540; /* dunkelblau */
-    color: #ffd76a; /* goldene Schrift */
-    font-family: "Marck Script", cursive;
-    font-size: 22px; /* kleiner wie Logo */
-    font-weight: bold;
+.news-img-button {
+    width: 150px; /* gewünschte Breite */
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
 
     border-radius: 14px; /* runder, eleganter */
     border: 2px solid rgba(255,255,255,0.7);
