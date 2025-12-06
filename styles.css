@@ -575,17 +575,35 @@ img[src*="spuren"] {
     margin-bottom: 6px; /* Abstand zum Bild */
 }
 
-/* Bild */
+.news-big-button {
+    text-align: right;
+    margin: 5px auto 40px;
+    padding-right: 20px;
+}
+
+.news-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Der Text auf dem Bild */
+.news-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    font-family: "Marck Script", cursive;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
+
+/* Das Bild */
 .news-image-button {
     width: 200px;
-    height: auto;
     border-radius: 18px;
     box-shadow: 0 0 14px rgba(0,0,0,0.3);
     border: 3px solid rgba(255,255,255,0.8);
-    transition: 0.3s ease;
-}
-
-.news-image-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 22px rgba(255,255,255,0.9);
+    display: block;
 }
