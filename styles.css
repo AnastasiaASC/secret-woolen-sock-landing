@@ -99,7 +99,7 @@ body {
 /* ===================== BUTTON-LEISTE ===================== */
 
 .buttons {
-    margin-top: 110px;
+    margin-top: 90px;
     display: flex;
     justify-content: center;
     gap: 18px;
