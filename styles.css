@@ -562,7 +562,7 @@ img[src*="spuren"] {
 /* Riesiger News-Button unter dem Banner */
 .news-big-button {
     text-align: center;
-    margin: 40px auto;
+    margin: 20px auto;
 }
 
 .news-big-button a {
@@ -579,18 +579,6 @@ img[src*="spuren"] {
     border: 10px solid rgba(255,255,255,0.8);
 }
 
-/* Schrift über dem Bild */
-.news-big-button span {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: "Marck Script", cursive;
-    font-size: 42px;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(0,0,0,0.8);
-    font-weight: bold;
-}
 
 /* Optional: leichter Hover-Effekt */
 .news-big-button:hover img {
