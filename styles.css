@@ -137,13 +137,6 @@ body {
     height: 24px;
     filter: drop-shadow(0 0 5px rgba(170, 220, 255, 0.9));
 }
-.heart {
-    color: #E94E1B;
-    text-shadow:
-        0 0 6px rgba(240, 72, 36, 0.8),
-        0 0 12px rgba(240, 72, 36, 0.6),
-        0 0 20px rgba(240, 72, 36, 0.4);
-}
 
 /* Donate-Button — jetzt identisch, nur optional leicht betont */
 .btn.donate-btn {
