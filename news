@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuigkeiten & Blog – Retcon Publish</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #dcd6ff; /* Lavendel */
+            font-family: "Marck Script", cursive;
+            color: #0a1f4a;
+            font-size: 22px;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #0d1540;
+        }
+
+        /* Hauptcontainer */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 20px;
+            position: relative;
+            border: 15px solid transparent;
+            background-clip: padding-box;
+        }
+
+        /* Schneerand */
+        .container:before {
+            content: "";
+            position: absolute;
+            inset: -15px;
+            border-radius: 30px;
+            background: linear-gradient(
+                135deg,
+                rgba(180,220,255,1),
+                rgba(240,250,255,1),
+                rgba(160,200,255,1)
+            );
+            filter: blur(2px) brightness(1.3);
+            z-index: -1;
+        }
+
+        /* Einzelne Beiträge in der Übersicht */
+        .post-preview {
+            background: rgba(255,255,255,0.65);
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.15);
+        }
+
+        .post-preview h3 {
+            margin-top: 0;
+        }
+
+        .post-preview p {
+            margin-bottom: 10px;
+        }
+
+        .post-preview a {
+            color: #0d1540;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #0d1540;
+            opacity: 0.4;
+            margin: 40px 0 20px 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Новостные финтифлюшки</h1>
+    <p>Загляните на огонек!.</p>
+
+    <hr>
+
+    <!-- ==========================
+         NEUESTE BEITRÄGE
+         ========================== -->
+    <h2>Свеженькое:</h2>
+
+    <!-- Post 1 -->
+    <div class="post-preview">
+        <h3>❄ “"Идиот" не нужен?…”</h3>
+        <p>Анекдот из 90-х</p>
+        <a href="post1.html">Weiterlesen →</a>
+    </div>
+
+    <!-- Post 2 (Platzhalter) -->
+    <div class="post-preview">
+        <h3>❄ Post 2 – Titel deines nächsten Beitrags</h3>
+        <p>Kurzbeschreibung... (dieser Block erscheint, sobald du post2.html erstellst)</p>
+        <a href="post2.html">Weiterlesen →</a>
+    </div>
+
+  //  <!-- Post 3 (Platzhalter) -->
+   // <div class="post-preview">
+     //   <h3>❄ Post 3 – Titel deines Beitrags</h3>
+     //   <p>Kleiner Teaser zu deinem Text...</p>
+      //  <a href="post3.html">Weiterlesen →</a>
+  //  </div>
+
+    <hr>
+
+    <!-- ==========================
+         ARCHIV
+         ========================== -->
+    <h2>Архив</h2>
+
+    <h3>2025</h3>
+    <ul>
+        <li><a href="post1.html">Post 1 – Не нужен идиот?…</a></li>
+        <li><a href="post2.html">Post 2 – (kommt später)</a></li>
+        <li><a href="post3.html">Post 3 – (kommt später)</a></li>
+    </ul>
+
+    <h3>2024</h3>
+    <ul>
+        <li><a href="#">(Hier kannst du ältere Texte hinzufügen)</a></li>
+    </ul>
+
+</div>
+
+</body>
+</html>
