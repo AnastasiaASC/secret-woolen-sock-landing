@@ -68,7 +68,7 @@ body {
 /* Kleiner Text im Banner (Hinweis 8–11 Jahre) */
 .top-note {
     position: absolute;
-    top: 50%;        /* vertikale Mitte */
+    top: 80%;        /* vertikale Mitte */
     right: 20px;     /* Abstand vom rechten Rand */
     font-size: 20px;
     color: white;
