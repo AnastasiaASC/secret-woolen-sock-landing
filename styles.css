@@ -559,30 +559,24 @@ img[src*="spuren"] {
     margin-bottom: 4px !important;  /* nach Wunsch anpassen */
 }
 
-/* Riesiger News-Button unter dem Banner */
-.news-big-button {
-    text-align: center;
-    margin: 20px auto;
-}
-
-.news-big-button a {
+.gold-button {
     display: inline-block;
-    position: relative;
+    padding: 14px 26px;
+    background: linear-gradient(135deg, #FFD56A, #F0A400);
+    color: #0d1540; /* dunkles Blau */
+    font-family: "Marck Script", cursive;
+    font-size: 28px;
+    font-weight: bold;
+
+    border-radius: 14px;
     text-decoration: none;
+    box-shadow: 0 0 10px rgba(255, 215, 100, 0.7);
+
+    transition: 0.3s ease;
 }
 
-.news-big-button img {
-    width: 100%;
-    max-width: 900px; /* damit es schön groß ist */
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.35);
-    border: 10px solid rgba(255,255,255,0.8);
-}
-
-
-/* Optional: leichter Hover-Effekt */
-.news-big-button:hover img {
-    transform: scale(1.02);
-    transition: 0.3s;
-    box-shadow: 0 0 30px rgba(255,255,255,0.8);
+/* Hover-Effekt */
+.gold-button:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 100, 1);
+    transform: scale(1.04);
 }
