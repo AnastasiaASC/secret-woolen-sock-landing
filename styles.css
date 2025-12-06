@@ -559,24 +559,26 @@ img[src*="spuren"] {
     margin-bottom: 4px !important;  /* nach Wunsch anpassen */
 }
 
-.gold-button {
+.big-news-button {
     display: inline-block;
-    padding: 14px 26px;
-    background: linear-gradient(135deg, #FFD56A, #F0A400);
-    color: #0d1540; /* dunkles Blau */
+    padding: 10px 20px; /* kleiner */
+    background: #0d1540; /* dunkelblau */
+    color: #ffd76a; /* goldene Schrift */
     font-family: "Marck Script", cursive;
-    font-size: 28px;
+    font-size: 22px; /* kleiner wie Logo */
     font-weight: bold;
 
-    border-radius: 14px;
+    border-radius: 14px; /* runder, eleganter */
+    border: 2px solid rgba(255,255,255,0.7);
     text-decoration: none;
-    box-shadow: 0 0 10px rgba(255, 215, 100, 0.7);
 
+    box-shadow: 0 0 8px rgba(0,0,0,0.25);
     transition: 0.3s ease;
 }
 
-/* Hover-Effekt */
-.gold-button:hover {
-    box-shadow: 0 0 20px rgba(255, 215, 100, 1);
+/* Hover */
+.big-news-button:hover {
+    background: #152060;
+    box-shadow: 0 0 14px rgba(255,255,255,0.7);
     transform: scale(1.04);
 }
