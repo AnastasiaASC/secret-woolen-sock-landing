@@ -64,20 +64,13 @@ body {
     position: relative;
     z-index: 20;
 }
-
-/* Kleiner Text im Banner (Hinweis 8–11 Jahre) */
-.top-note {
-    position: absolute;
-    top: 60%;        /* vertikale Mitte */
-    right: 50%;;     /mitte/
-    font-size: 20px;
-    color: white;
-    padding: 6px 10px;
-    background: rgba(0, 40, 120, 0.55);
-    border-radius: 10px;
-    backdrop-filter: blur(2px);
-    z-index: 20;
-    line-height: 1.1;
+.subtitle-small {
+    color: #eef1ff;   /* hellste Farbe aus deinem Gradient */
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 20px;
 }
 
 /* Blaues Feld, falls genutzt */
