@@ -211,32 +211,3 @@ document.addEventListener("DOMContentLoaded", () => {
 </body>
 
 </html>
-/* Desktop – normale Position */
-.top-note {
-    position: absolute;
-    right: 20px;
-    top: 40px;
-    max-width: 240px;
-    text-align: right;
-}
-
-/* Mobile: Banner kleiner → Hinweis rutscht tiefer */
-@media (max-width: 600px) {
-    .top-note {
-        top: 70px;     /* etwas unter den Titel */
-        right: 12px;
-        max-width: 200px;
-        font-size: 16px;
-        line-height: 1.3;
-    }
-}
-
-/* Sehr kleine Smartphones */
-@media (max-width: 420px) {
-    .top-note {
-        top: 95px;     /* noch etwas tiefer */
-        right: 8px;
-        max-width: 180px;
-        font-size: 15px;
-    }
-}
