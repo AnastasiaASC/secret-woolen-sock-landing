@@ -68,8 +68,8 @@ body {
 /* Kleiner Text im Banner (Hinweis 8–11 Jahre) */
 .top-note {
     position: absolute;
-    top: 80%;        /* vertikale Mitte */
-    right: 20px;     /* Abstand vom rechten Rand */
+    top: 60%;        /* vertikale Mitte */
+    right: 50%;;     /mitte/
     font-size: 20px;
     color: white;
     padding: 6px 10px;
@@ -77,7 +77,6 @@ body {
     border-radius: 10px;
     backdrop-filter: blur(2px);
     z-index: 20;
-    transform: translateY(-50%) rotate(-8deg); /* echte Zentrierung + Schräglage */
     line-height: 1.1;
 }
 
