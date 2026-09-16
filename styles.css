@@ -15,7 +15,12 @@ html { scroll-behavior: smooth; }
 body {
     margin: 0;
     overflow-x: hidden;
-    background: var(--paper) url('watercolor-paper-v2.png') center top / 100% auto repeat-y;
+    background-color: #d8eaf5;
+    background-image: url('watercolor-paper-v2.png');
+    background-position: center 570px;
+    background-size: 1180px auto;
+    background-repeat: repeat-y;
+    background-blend-mode: multiply;
     color: var(--ink);
     font-family: Georgia, 'Times New Roman', serif;
     font-size: clamp(20px, 1.35vw, 24px);
@@ -121,6 +126,16 @@ section {
     margin: 0 auto;
     padding: clamp(68px, 9vw, 120px) clamp(22px, 5vw, 64px);
     text-align: center;
+}
+
+section::after {
+    position: absolute;
+    inset: 22px 10px;
+    z-index: -1;
+    border-radius: 46% 54% 49% 51% / 52% 46% 54% 48%;
+    background: rgba(255, 253, 248, .2);
+    content: '';
+    pointer-events: none;
 }
 
 section + section::before {
@@ -259,7 +274,12 @@ section:nth-of-type(3) .section-img {
 }
 
 @media (max-width: 700px) {
-    body { font-size: 20px; line-height: 1.68; }
+    body {
+        background-position: center 0;
+        background-size: 820px auto;
+        font-size: 20px;
+        line-height: 1.68;
+    }
     .winter-banner { min-height: 0; padding: 108px 12px 44px; }
     .banner-title { font-size: clamp(34px, 11vw, 48px); overflow-wrap: anywhere; }
     .subtitle { font-size: 38px; }
